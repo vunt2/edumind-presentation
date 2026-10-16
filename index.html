@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EduMind — Lifelong Learner Profile | VinSmart Future (VSF)</title>
+  <title>EduMind — Hồ sơ năng lực & Gia sư AI</title>
   <style>
     :root {
       /* Brand Identity: VinSmart Future (VSF) — The Rising of V */
@@ -784,6 +784,106 @@
       *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
     }
 
+  
+    /* Pitch-deck refinements: responsive layouts, legibility and accessible controls */
+    * { user-select: text; }
+    button, .nav-dot { user-select: none; }
+    .hero-pills, .closing-actions { display:flex; flex-wrap:wrap; gap:10px; }
+    .hero-pills .card-badge { margin-bottom: 0; }
+    .value-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px 24px; }
+    .value-item { display:flex; gap:16px; align-items:flex-start; padding:18px 20px; border:1px solid rgba(83,139,185,.2); background:rgba(255,255,255,.5); border-radius:18px; }
+    .value-item .card-h2 { margin-bottom:6px; }
+    .value-number { display:grid; place-items:center; flex:0 0 42px; width:42px; height:42px; border-radius:13px; color:#226da9; font-weight:900; background:rgba(76,168,223,.14); }
+    .slide-note { margin-top:16px; font-size:12px; line-height:1.5; color:#5d7388; }
+    .loop-strip, .milestone-strip { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:18px; padding:14px; border:1px solid rgba(83,139,185,.22); background:rgba(226,242,255,.65); border-radius:16px; color:#294965; font-size:13px; }
+    .loop-strip span { font-weight:700; }
+    .loop-strip b { color:#388fce; }
+    .milestone-strip { justify-content:space-around; gap:16px; }
+    .milestone-strip div { display:flex; flex-direction:column; gap:4px; min-width:120px; }
+    .milestone-strip strong { color:#226da9; }
+    .milestone-strip span { color:#405a74; font-size:12px; }
+    .architecture { display:grid; gap:8px; max-width:850px; margin:0 auto 18px; width:100%; }
+    .arch-layer { display:grid; grid-template-columns:170px 1fr; align-items:center; gap:8px 18px; padding:15px 20px; border-radius:16px; border:1px solid rgba(83,139,185,.25); background:rgba(255,255,255,.62); }
+    .arch-label { grid-row:span 2; font-size:11px; text-transform:uppercase; letter-spacing:.07em; font-weight:800; color:#387fb4; }
+    .arch-layer strong { color:#1d3854; font-size:17px; }
+    .arch-layer p { color:#526b83; font-size:13px; }
+    .arch-arrow { text-align:center; color:#3988c8; font-size:12px; font-weight:700; }
+    .arch-notes { gap:14px; }
+    .roadmap-outcome { margin-top:12px; padding-top:10px; border-top:1px solid rgba(83,139,185,.2); color:#526b83; font-size:12px; line-height:1.5; }
+    .roadmap-outcome strong { color:#294965; }
+    .closing-ask { margin-top:4px; padding:14px 18px; border-radius:14px; border:1px solid rgba(56,143,206,.25); background:rgba(225,241,255,.72); color:#405a74; font-size:14px; line-height:1.5; }
+    .closing-ask strong { color:#1d5688; }
+    .closing-actions { justify-content:center; margin-top:16px; }
+    .slide { overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:rgba(65,130,180,.35) transparent; }
+    .glass-btn:focus-visible, .nav-dot:focus-visible { outline:3px solid #1676c5; outline-offset:3px; }
+    .nav-dot { border:0; padding:0; }
+    .nav-dot[aria-current="step"] { background:#388fce; box-shadow:0 0 10px rgba(56,143,206,.35); transform:scale(1.35); }
+    @media (max-width: 1100px) {
+      main.stage { padding:16px 20px; }
+      .slide { padding:30px 32px; }
+      .slide-h1 { font-size:clamp(27px,3.4vw,36px); }
+      .hero-title-main { font-size:clamp(46px,5.2vw,60px); }
+      .glass-card { padding:18px; }
+      .card-body { font-size:14px; }
+      .stat-number { font-size:clamp(30px,4vw,40px); }
+      .stat-row { gap:12px; }
+    }
+    @media (max-width: 760px) {
+      body { width:100%; min-height:100dvh; height:auto; overflow-x:hidden; overflow-y:auto; }
+      header.deck-header { min-height:60px; height:auto; padding:10px 12px; gap:8px; }
+      .brand-cluster { min-width:0; gap:8px; }
+      .vsf-logo-badge { padding:5px 8px; gap:6px; }
+      .vsf-brand-title { font-size:10px; }
+      .vsf-brand-sub { font-size:8px; }
+      .deck-title-inline { display:none; }
+      .slide-badge-counter { font-size:11px; padding:5px 9px; white-space:nowrap; }
+      main.stage { display:block; flex:1 0 auto; min-height:0; padding:12px; }
+      .slide-viewport { width:100%; height:auto; min-height:calc(100dvh - 160px); max-height:none; aspect-ratio:auto; display:block; }
+      .slide { inset:0; min-height:calc(100dvh - 160px); max-height:none; padding:24px 18px; border-radius:20px; justify-content:flex-start; }
+      .hero-split, .grid-2, .grid-3, .stat-row, .value-grid { grid-template-columns:minmax(0,1fr); gap:12px; }
+      .hero-split { height:auto; }
+      .hero-content { order:0; }
+      .hero-visual-card { order:1; padding:14px; }
+      .hero-title-main { font-size:clamp(42px,13vw,58px); }
+      .hero-tagline-main { font-size:clamp(18px,5.4vw,22px); }
+      .hero-desc-main { font-size:15px; margin-bottom:18px; }
+      .slide-h1 { font-size:clamp(26px,7.5vw,34px); line-height:1.15; }
+      .slide-lead { font-size:14px; margin-bottom:18px; }
+      .hero-mascot-img { width:min(150px,48vw); height:min(150px,48vw); }
+      .glass-card, .stat-card { padding:16px; border-radius:16px; }
+      .card-h2 { font-size:18px; }
+      .card-body { font-size:14px; }
+      .glass-table { display:block; max-width:100%; overflow-x:auto; white-space:normal; }
+      .glass-table th, .glass-table td { padding:12px 14px; min-width:140px; font-size:13px; }
+      footer.deck-footer { min-height:0; height:auto; padding:10px 12px; gap:10px; flex-wrap:wrap; }
+      footer.deck-footer > div:first-child { font-size:11px !important; }
+      .progress-track { order:3; flex-basis:100%; margin:0; max-width:none; }
+      .nav-actions { gap:6px; }
+      .nav-dots { display:none; }
+      .glass-btn { padding:9px 11px; font-size:12px; border-radius:10px; }
+      .value-item { padding:14px; gap:12px; }
+      .loop-strip { justify-content:flex-start; font-size:12px; }
+      .loop-strip b { display:none; }
+      .milestone-strip { align-items:stretch; justify-content:flex-start; }
+      .milestone-strip div { flex:1 1 100%; }
+      .arch-layer { grid-template-columns:1fr; gap:6px; padding:14px; }
+      .arch-label { grid-row:auto; }
+      .architecture { margin-bottom:14px; }
+      .arch-notes { grid-template-columns:1fr; }
+      .closing-actions { gap:8px; }
+      .closing-ask { font-size:13px; }
+    }
+    @media (max-width: 380px) {
+      .slide { padding:20px 14px; }
+      .nav-actions { width:100%; justify-content:space-between; }
+      #btnPrev, #btnNext { flex:1; justify-content:center; }
+      #btnFs { flex:0 0 auto; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .liquid-orb, .hero-mascot-img { animation:none !important; }
+      .slide, .glass-card, .glass-btn, .progress-bar { transition:none !important; }
+    }
+
   </style>
 </head>
 <body>
@@ -810,17 +910,15 @@
           </svg>
         </div>
         <div class="vsf-name-block">
-          <span class="vsf-brand-title">VinSmart Future</span>
-          <span class="vsf-brand-sub">Tập đoàn Vingroup</span>
+          <span class="vsf-brand-title">EduMind</span>
+          <span class="vsf-brand-sub">Learning intelligence</span>
         </div>
       </div>
 
-      <div class="deck-title-inline" aria-label="EduMind presentation">
-        <span>EduMind</span>
-      </div>
+      <div class="deck-title-inline" aria-label="Bản trình bày EduMind"><span>EduMind</span><span class="sep">/</span><span class="highlight">Hồ sơ năng lực học tập</span></div>
     </div>
 
-    <div class="slide-badge-counter" id="slideIndicator">01 / 08</div>
+    <div class="slide-badge-counter" id="slideIndicator" aria-live="polite">01 / 08</div>
   </header>
 
   <!-- STAGE -->
@@ -828,310 +926,131 @@
     <div class="slide-viewport">
 
       <!-- SLIDE 1: PRODUCT IDENTITY & VISION -->
-      <section class="slide active" id="slide-0">
-        <div class="hero-split">
-          <div class="hero-content">
-            <div class="kicker">
-              <span class="kicker-dot"></span>
-              Sản phẩm Đột phá · VinSmart Future (VSF)
-            </div>
-            <h1 class="hero-title-main">EduMind</h1>
-            <h2 class="hero-tagline-main">Hồ sơ Năng lực Trọn đời & Nền tảng Gia sư AI</h2>
-            <p class="hero-desc-main">
-              Xây dựng tài sản học tập dài hạn thuộc <strong>quyền sở hữu của người học</strong>. Chuyển dịch từ điểm số thi cử bề nổi sang hệ thống ghi nhận năng lực thực chất dựa trên bằng chứng (Evidence-Based), đồng hành xuyên suốt các cấp học cùng hệ sinh thái <strong>6 Đặc vụ AI chuyên trách</strong>.
-            </p>
-            <div style="display: flex; gap: 14px;">
-              <span class="card-badge badge-blue">Hồ sơ Năng lực Trọn đời</span>
-              <span class="card-badge badge-cyan">Hệ sinh thái 6 AI Agents</span>
-              <span class="card-badge badge-gold">Bám sát Đề thi Trường thật</span>
-            </div>
-          </div>
-
-          <div class="hero-visual-card">
-            <img src="grad-bird.png" alt="EduMind Mascot" class="hero-mascot-img" onerror="this.src='mascot.png'">
-            <div class="hero-caption">Mascot Đại diện Trí tuệ EduMind · VSF</div>
-          </div>
-        </div>
-      </section>
+      <section class="slide active" id="slide-0" aria-labelledby="slide-title-0">
+  <div class="hero-split">
+    <div class="hero-content">
+      <div class="kicker"><span class="kicker-dot"></span>Nền tảng học tập cá nhân hóa</div>
+      <h1 class="hero-title-main" id="slide-title-0">EduMind</h1>
+      <h2 class="hero-tagline-main">Mỗi lần học tạo ra một bước tiến có thể nhìn thấy.</h2>
+      <p class="hero-desc-main">EduMind kết nối luyện tập, phản hồi và hồ sơ năng lực thành một vòng lặp học tập liên tục — để học sinh hiểu mình đang ở đâu, cần cải thiện điều gì và nên học gì tiếp theo.</p>
+      <div class="hero-pills">
+        <span class="card-badge badge-blue">Hiểu đúng năng lực</span>
+        <span class="card-badge badge-cyan">Luyện đúng trọng tâm</span>
+        <span class="card-badge badge-gold">Theo dõi tiến bộ</span>
+      </div>
+    </div>
+    <div class="hero-visual-card">
+      <img src="grad-bird.png" alt="Linh vật EduMind" class="hero-mascot-img" onerror="this.onerror=null;this.src='mascot.png'">
+      <div class="hero-caption">Từ kết quả bài làm đến hành động học tiếp theo</div>
+    </div>
+  </div>
+</section>
 
       <!-- SLIDE 2: CORE MARKET PROBLEMS -->
-      <section class="slide" id="slide-1">
-        <div class="kicker"><span class="kicker-dot"></span>Thực trạng & Nỗi đau Thị trường</div>
-        <h1 class="slide-h1">4 Thách thức Lớn của Giáo dục Hiện tại</h1>
-        <p class="slide-lead">Phương pháp học tập và các ứng dụng truyền thống chỉ giải quyết phần ngọn, để lại lỗ hổng lớn về dữ liệu và sự tiến bộ dài hạn của người học.</p>
-        
-        <div class="grid-2">
-          <div class="glass-card">
-            <span class="card-badge badge-red">Nỗi đau 01</span>
-            <h2 class="card-h2">Mù mờ về Năng lực Thực chất</h2>
-            <p class="card-body">
-              Điểm số bài kiểm tra (5.5 hay 6.0) không chỉ ra được cụ thể học sinh hổng kiến thức ở đâu, sai dạng bài nào hay mắc lỗi hiểu sai (Misconceptions) gì. Người học không biết mình thực sự yếu ở đâu để khắc phục.
-            </p>
-          </div>
-
-          <div class="glass-card">
-            <span class="card-badge badge-red">Nỗi đau 02</span>
-            <h2 class="card-h2">Kỹ năng Viết bị Bỏ quên</h2>
-            <p class="card-body">
-              Lớp học đông khiến giáo viên quá tải, không thể sửa chi tiết từng bài viết. Các ứng dụng hiện nay <strong>chủ yếu luyện trắc nghiệm A/B/C/D</strong>, triệt tiêu cơ hội rèn luyện tư duy diễn đạt và lập luận tự luận của học sinh.
-            </p>
-          </div>
-
-          <div class="glass-card">
-            <span class="card-badge badge-gold">Nỗi đau 03</span>
-            <h2 class="card-h2">Luyện lệch Đề & Format Trường Thật</h2>
-            <p class="card-body">
-              Học sinh luyện theo đề mạng chung chung hoặc bám chứng chỉ quốc tế (IELTS/TOEIC). Khi làm bài thi trên lớp, <strong>ma trận và mô-típ đề thi riêng của từng trường</strong> khiến kết quả kiểm tra bị sai lệch nghiêm trọng.
-            </p>
-          </div>
-
-          <div class="glass-card">
-            <span class="card-badge badge-gold">Nỗi đau 04</span>
-            <h2 class="card-h2">Dữ liệu Học tập bị Xóa sạch (Data Amnesia)</h2>
-            <p class="card-body">
-              Đổi app, đổi lớp hoặc hết năm học là <strong>mất sạch lịch sử tiến bộ</strong>, phải đánh giá lại từ đầu. Không có một hệ thống nào lưu giữ và tích lũy hồ sơ năng lực xuyên suốt làm bệ phóng cho các cấp học tiếp theo.
-            </p>
-          </div>
-        </div>
-      </section>
+      <section class="slide" id="slide-1" aria-labelledby="slide-title-1">
+  <div class="kicker"><span class="kicker-dot"></span>Vấn đề cần giải quyết</div>
+  <h1 class="slide-h1" id="slide-title-1">Học nhiều hơn chưa chắc đã học đúng.</h1>
+  <p class="slide-lead">Học sinh có thể làm rất nhiều bài nhưng vẫn thiếu một bức tranh rõ ràng về năng lực và bước tiến tiếp theo.</p>
+  <div class="grid-2">
+    <div class="glass-card"><span class="card-badge badge-red">01 · Chẩn đoán</span><h2 class="card-h2">Điểm số chưa nói đủ</h2><p class="card-body">Một điểm 6/10 chưa cho biết học sinh sai ở kiến thức nào, dạng bài nào hay do hiểu nhầm điều gì. Thiếu chẩn đoán, việc ôn tập dễ thành thử-sai.</p></div>
+    <div class="glass-card"><span class="card-badge badge-red">02 · Phản hồi</span><h2 class="card-h2">Phản hồi khó đến kịp lúc</h2><p class="card-body">Bài viết và câu trả lời tự luận cần nhận xét cụ thể. Trong khi đó, thời gian của giáo viên có hạn và phản hồi chung chung khó biến thành hành động.</p></div>
+    <div class="glass-card"><span class="card-badge badge-gold">03 · Tính phù hợp</span><h2 class="card-h2">Luyện tập chưa chắc sát mục tiêu</h2><p class="card-body">Ngân hàng câu hỏi rộng nhưng không phải lúc nào cũng phản ánh cấu trúc đề, nội dung đã học và mục tiêu kiểm tra của từng học sinh.</p></div>
+    <div class="glass-card"><span class="card-badge badge-gold">04 · Liên tục</span><h2 class="card-h2">Tiến bộ bị chia cắt</h2><p class="card-body">Kết quả nằm rải rác trong nhiều bài làm và ứng dụng. Khi đổi chủ đề hoặc học kỳ, học sinh khó nhìn lại mình đã tiến bộ ở đâu và còn vướng gì.</p></div>
+  </div>
+</section>
 
       <!-- SLIDE 3: THE MOAT & LIFELONG VISION -->
-      <section class="slide" id="slide-2">
-        <div class="kicker"><span class="kicker-dot"></span>Tầm nhìn Cốt lõi & Rào cản Cạnh tranh</div>
-        <h1 class="slide-h1">Hồ sơ Năng lực Trọn đời — Lợi thế Độc bản</h1>
-        <p class="slide-lead">EduMind xác lập một chuẩn mực mới: Dữ liệu học tập là tài sản thuộc về học sinh, đồng hành trọn đời và không bị giới hạn trong bất kỳ ứng dụng nào.</p>
-
-        <table class="glass-table">
-          <thead>
-            <tr>
-              <th style="width: 22%;">Khía cạnh</th>
-              <th style="width: 39%;">Giải pháp Phổ biến Hiện nay</th>
-              <th style="width: 39%; color: var(--vsf-cyan);">EduMind — VinSmart Future</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Quyền sở hữu Dữ liệu</strong></td>
-              <td>Khóa trong từng app; đổi app là mất sạch lịch sử học tập.</td>
-              <td><strong style="color: var(--vsf-cyan);">Hồ sơ Năng lực Trọn đời</strong> tích lũy bằng chứng có nguồn và thời điểm, mang đi được suốt đời.</td>
-            </tr>
-            <tr>
-              <td><strong>Nguồn đề & Chuẩn hóa</strong></td>
-              <td>Ngân hàng câu hỏi ngẫu nhiên; không khớp mô-típ trường thật.</td>
-              <td><strong style="color: #ffffff;">Phân tích từ chính đề thật của trường</strong> theo năm, khối, kỳ. Luyện đúng trọng tâm kỳ thi.</td>
-            </tr>
-            <tr>
-              <td><strong>Cơ chế Trí tuệ Nhân tạo</strong></td>
-              <td>Chatbot đơn lẻ (Single-LLM), hay ảo giác, tự sinh câu hỏi rồi tự chấm.</td>
-              <td><strong style="color: #ffffff;">Hệ thống 6 Agent ngang hàng</strong>, kiểm chéo nghiêm ngặt; không agent nào tự xác nhận sản phẩm của mình.</td>
-            </tr>
-            <tr>
-              <td><strong>Quyền quyết định</strong></td>
-              <td>Hệ thống áp đặt lộ trình cứng nhắc một chiều.</td>
-              <td><strong style="color: var(--vsf-cyan);">Học sinh cầm lái</strong>: tự khai deadline, tự gọi đề theo ý muốn, trực tiếp duyệt mọi thay đổi lộ trình.</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+      <section class="slide" id="slide-2" aria-labelledby="slide-title-2">
+  <div class="kicker"><span class="kicker-dot"></span>Giá trị khác biệt</div>
+  <h1 class="slide-h1" id="slide-title-2">Không chỉ trả lời câu hỏi — xây dựng hồ sơ tiến bộ.</h1>
+  <p class="slide-lead">Điểm khác biệt của EduMind là kết nối bằng chứng học tập với quyết định học tiếp theo, thay vì chỉ cung cấp một cuộc trò chuyện hoặc một bộ đề.</p>
+  <div class="value-grid">
+    <div class="value-item"><span class="value-number">01</span><div><h2 class="card-h2">Hồ sơ có bằng chứng</h2><p class="card-body">Ghi nhận kỹ năng, dạng bài, lỗi thường gặp và thời điểm quan sát để theo dõi thay đổi theo thời gian.</p></div></div>
+    <div class="value-item"><span class="value-number">02</span><div><h2 class="card-h2">Luyện tập theo mục tiêu</h2><p class="card-body">Ưu tiên nội dung dựa trên mục tiêu, thời gian còn lại và bằng chứng từ bài làm — không chỉ chọn câu hỏi ngẫu nhiên.</p></div></div>
+    <div class="value-item"><span class="value-number">03</span><div><h2 class="card-h2">AI có phân vai và kiểm tra</h2><p class="card-body">Tách nhiệm vụ tạo đề, chấm, phân tích và hướng dẫn; thiết kế điểm kiểm tra để giảm lỗi và truy vết quyết định.</p></div></div>
+    <div class="value-item"><span class="value-number">04</span><div><h2 class="card-h2">Người học giữ quyền chủ động</h2><p class="card-body">Học sinh đặt mục tiêu, xem lý do của gợi ý và có thể điều chỉnh kế hoạch học phù hợp với lịch thực tế.</p></div></div>
+  </div>
+  <p class="slide-note">Định hướng sản phẩm: quyền truy cập, xuất dữ liệu và cơ chế đồng ý cần được thiết kế rõ ngay từ đầu.</p>
+</section>
 
       <!-- SLIDE 4: 6 DOMAIN AGENTS -->
-      <section class="slide" id="slide-3">
-        <div class="kicker"><span class="kicker-dot"></span>Kiến trúc Đột phá — Multi-Agent System</div>
-        <h1 class="slide-h1">Hệ sinh thái 6 Đặc vụ Chuyên trách Ngang hàng</h1>
-        <p class="slide-lead">Mô hình Zero-Coordinator: Mỗi agent quản trị độc quyền một miền nghiệp vụ, kiểm chéo lẫn nhau để loại bỏ hoàn toàn rủi ro AI ảo giác.</p>
-
-        <div class="grid-3">
-          <div class="glass-card">
-            <span class="card-badge badge-blue">School Agent</span>
-            <h2 class="card-h2">Quản trị Đề Trường Thật</h2>
-            <p class="card-body">
-              Nắm giữ kho đề thi thật của các trường; phân tích format ma trận (năm, khối, kỳ) với ngưỡng <strong>≥ 3 đề mẫu</strong>; cung cấp danh mục bài học và từ vựng đã học.
-            </p>
-          </div>
-
-          <div class="glass-card">
-            <span class="card-badge badge-cyan">Test Agent</span>
-            <h2 class="card-h2">Sole Scorer (Chấm Độc quyền)</h2>
-            <p class="card-body">
-              <strong>Đơn vị DUY NHẤT chấm điểm</strong> theo đáp án sạch hoặc rubric giải thích. Sinh đề mới theo 3 chế độ (Một dạng bài, Phần nâng cao, Format trường).
-            </p>
-          </div>
-
-          <div class="glass-card">
-            <span class="card-badge badge-red">English Agent</span>
-            <h2 class="card-h2">Thẩm định Chuyên môn</h2>
-            <p class="card-body">
-              Chuyên gia ngôn ngữ. <strong>Kiểm duyệt 100% câu tự sinh</strong> của Test trước khi phát hành; giải đáp thắc mắc chuyên môn, tuyệt đối không chấm điểm.
-            </p>
-          </div>
-
-          <div class="glass-card">
-            <span class="card-badge badge-gold">Analysis Agent</span>
-            <h2 class="card-h2">Exclusive Profile Write</h2>
-            <p class="card-body">
-              <strong>Đơn vị DUY NHẤT cập nhật Profile</strong> qua cổng Evidence service. Nhận diện chính xác các lỗi hiểu sai (Misconceptions) của người học.
-            </p>
-          </div>
-
-          <div class="glass-card">
-            <span class="card-badge badge-blue">Plan Agent</span>
-            <h2 class="card-h2">Lộ trình Thích ứng Tự động</h2>
-            <p class="card-body">
-              Kiến tạo và tự động điều chỉnh <strong>Learning Plan theo deadline học sinh tự khai</strong>; ưu tiên phần vừa yếu vừa chiếm tỉ trọng điểm lớn trong đề trường.
-            </p>
-          </div>
-
-          <div class="glass-card">
-            <span class="card-badge badge-cyan">Tutor Agent</span>
-            <h2 class="card-h2">Gia sư Socratic 1-on-1</h2>
-            <p class="card-body">
-              Dẫn dắt buổi học theo <strong>phương pháp sư phạm gợi mở (Socratic)</strong>, đặt câu hỏi từng bước, khích lệ tư duy, không bao giờ giải hộ hay đưa đáp án sẵn.
-            </p>
-          </div>
-        </div>
-      </section>
+      <section class="slide" id="slide-3" aria-labelledby="slide-title-3">
+  <div class="kicker"><span class="kicker-dot"></span>Cách hệ thống phối hợp</div>
+  <h1 class="slide-h1" id="slide-title-3">Sáu vai trò AI — một vòng lặp học tập.</h1>
+  <p class="slide-lead">Phân chia trách nhiệm giúp mỗi bước có đầu vào, đầu ra và tiêu chí kiểm tra rõ ràng. Thiết kế đa tác tử hỗ trợ kiểm soát chất lượng, nhưng không loại bỏ hoàn toàn sai sót.</p>
+  <div class="grid-3 agent-grid">
+    <div class="glass-card"><span class="card-badge badge-blue">01 · School</span><h2 class="card-h2">Nguồn đề & chương trình</h2><p class="card-body">Quản lý tài liệu tham chiếu, chủ đề và cấu trúc đề khi có nguồn phù hợp.</p></div>
+    <div class="glass-card"><span class="card-badge badge-cyan">02 · Test</span><h2 class="card-h2">Tạo bài & chấm</h2><p class="card-body">Tạo bài luyện theo cấu hình; chấm bằng đáp án hoặc rubric đã xác định.</p></div>
+    <div class="glass-card"><span class="card-badge badge-red">03 · English</span><h2 class="card-h2">Rà soát chuyên môn</h2><p class="card-body">Kiểm tra ngôn ngữ, đáp án và độ phù hợp trước khi câu hỏi được sử dụng.</p></div>
+    <div class="glass-card"><span class="card-badge badge-gold">04 · Analysis</span><h2 class="card-h2">Phân tích bằng chứng</h2><p class="card-body">Tổng hợp kết quả, nhận diện mẫu lỗi và cập nhật hồ sơ theo quy tắc được kiểm soát.</p></div>
+    <div class="glass-card"><span class="card-badge badge-blue">05 · Plan</span><h2 class="card-h2">Đề xuất bước tiếp</h2><p class="card-body">Sắp xếp ưu tiên theo mục tiêu, hạn kiểm tra, thời lượng và phần kiến thức cần củng cố.</p></div>
+    <div class="glass-card"><span class="card-badge badge-cyan">06 · Tutor</span><h2 class="card-h2">Gia sư gợi mở</h2><p class="card-body">Đặt câu hỏi từng bước, giải thích khi cần và khuyến khích học sinh tự lập luận.</p></div>
+  </div>
+  <div class="loop-strip"><span>Đề xuất bài</span><b>→</b><span>Làm bài</span><b>→</b><span>Phản hồi</span><b>→</b><span>Cập nhật hồ sơ</span><b>→</b><span>Điều chỉnh kế hoạch</span></div>
+</section>
 
       <!-- SLIDE 5: MVP VALIDATION SCOPE -->
-      <section class="slide" id="slide-4">
-        <div class="kicker"><span class="kicker-dot"></span>Chiến lược Kiểm chứng 6 Tuần</div>
-        <h1 class="slide-h1">MVP Tiếng Anh Lớp 9 Luyện theo Đề Trường</h1>
-        <p class="slide-lead">Lựa chọn Tiếng Anh 9 nhằm kiểm chứng toàn bộ vòng lặp kiến trúc (Sinh đề → Làm bài → Chấm → Hồ sơ → Đổi lộ trình) với sai số đo được trước khi mở rộng.</p>
-
-        <div class="grid-3">
-          <div class="glass-card">
-            <span class="card-badge badge-blue">Chiến lược MVP</span>
-            <h2 class="card-h2">Vì sao chọn Tiếng Anh 9?</h2>
-            <p class="card-body">
-              Dạng bài tập ổn định (đổi trường chỉ đổi tỉ trọng, không đổi bản chất dạng bài). Chấm đóng và rubric viết có sai số đo được bằng nhãn. Khép kín vòng lặp nhanh để chứng minh năng lực lõi của Hồ sơ trọn đời.
-            </p>
-          </div>
-
-          <div class="glass-card">
-            <span class="card-badge badge-cyan">Học sinh Minh</span>
-            <h2 class="card-h2">Lộ trình theo Deadline Tự khai</h2>
-            <p class="card-body">
-              Học sinh khai <strong>“còn 8 ngày nữa thi, mục tiêu lên 8.0”</strong>. Hệ thống không áp đặt độ dài cố định mà tự co giãn kế hoạch hợp lý theo bất kỳ deadline nào (3 ngày, 8 ngày hay 30 ngày), mỗi ngày 25–30 phút.
-            </p>
-          </div>
-
-          <div class="glass-card">
-            <span class="card-badge badge-gold">Format Đề Trường</span>
-            <h2 class="card-h2">6 Dạng bài P0 Thực chiến</h2>
-            <p class="card-body">
-              Bám sát ma trận trường thật, không cắt cứng kiểu IELTS: Đọc hiểu, Từ vựng theo Unit, Ngữ pháp, Sắp xếp câu, Viết lại câu và Viết đoạn văn (80–120 từ) có rubric 4 tiêu chí rõ ràng.
-            </p>
-          </div>
-        </div>
-      </section>
+      <section class="slide" id="slide-4" aria-labelledby="slide-title-4">
+  <div class="kicker"><span class="kicker-dot"></span>Phạm vi kiểm chứng ban đầu</div>
+  <h1 class="slide-h1" id="slide-title-4">Bắt đầu hẹp để chứng minh giá trị thật.</h1>
+  <p class="slide-lead">MVP tập trung vào Tiếng Anh lớp 9 để kiểm tra một vòng lặp có thể đo lường trước khi mở rộng môn học hoặc quy mô triển khai.</p>
+  <div class="grid-3">
+    <div class="glass-card"><span class="card-badge badge-blue">Phạm vi</span><h2 class="card-h2">Một môn, một nhóm người học</h2><p class="card-body">Tập trung vào Tiếng Anh lớp 9 và các dạng bài có tiêu chí đánh giá rõ. Tài liệu đề trường chỉ dùng khi có nguồn và quyền sử dụng phù hợp.</p></div>
+    <div class="glass-card"><span class="card-badge badge-cyan">Trải nghiệm mẫu</span><h2 class="card-h2">Từ mục tiêu đến kế hoạch</h2><p class="card-body">Ví dụ minh họa: học sinh còn 8 ngày trước kỳ kiểm tra, chọn thời lượng 25 phút mỗi ngày; hệ thống đề xuất thứ tự luyện tập dựa trên kết quả gần nhất.</p></div>
+    <div class="glass-card"><span class="card-badge badge-gold">6 dạng bài ưu tiên</span><h2 class="card-h2">Bám sát kỹ năng cần học</h2><p class="card-body">Đọc hiểu · từ vựng theo Unit · ngữ pháp · sắp xếp câu · viết lại câu · viết đoạn 80–120 từ với rubric công khai.</p></div>
+  </div>
+  <div class="milestone-strip"><div><strong>Tuần 1–2</strong><span>Chuẩn hóa nội dung & rubric</span></div><div><strong>Tuần 3–4</strong><span>Kiểm thử vòng lặp học tập</span></div><div><strong>Tuần 5–6</strong><span>Pilot nhỏ, đo lỗi và cải tiến</span></div></div>
+  <p class="slide-note">Lộ trình 6 tuần là kế hoạch đề xuất; cần xác nhận theo nguồn lực và trạng thái triển khai thực tế.</p>
+</section>
 
       <!-- SLIDE 6: ENTERPRISE ARCHITECTURE -->
-      <section class="slide" id="slide-5">
-        <div class="kicker"><span class="kicker-dot"></span>Hạ tầng Kỹ thuật & Chuẩn mực Doanh nghiệp</div>
-        <h1 class="slide-h1">Kiến trúc Công nghệ & Ranh giới Bảo mật</h1>
-        <p class="slide-lead">Hạ tầng phân tầng chuẩn mực cao cấp của VinSmart Future, bảo đảm an toàn dữ liệu, tính nhất quán đồng thời và khả năng mở rộng không giới hạn.</p>
-
-        <div class="grid-2">
-          <div class="glass-card">
-            <span class="card-badge badge-blue">Tech Stack Cốt lõi</span>
-            <h2 class="card-h2">Monorepo Hiện đại & Xử lý Bất đồng bộ</h2>
-            <p class="card-body">
-              <strong>Frontend</strong>: Next.js + TypeScript, giao diện Chat-Centric Workspace với Server-Sent Events (SSE) thời gian thực.<br><br>
-              <strong>Backend & Worker</strong>: FastAPI (Python) + Celery background workers xử lý pipeline AI sinh đề và chấm tự luận.<br><br>
-              <strong>Data Engine</strong>: PostgreSQL / Supabase Production (Single Source of Truth) kết hợp kiểm soát đồng thời lạc quan (OCC).
-            </p>
-          </div>
-
-          <div class="glass-card">
-            <span class="card-badge badge-red">Ranh giới An toàn</span>
-            <h2 class="card-h2">Zero Trust & Cổng Tích hợp Ngoài</h2>
-            <p class="card-body">
-              <strong>Ranh giới bảo mật nghiêm ngặt</strong>: Frontend chỉ qua REST/SSE, tuyệt đối không chạm trực tiếp Database hoặc LLM.<br><br>
-              <strong>Độc quyền dữ liệu</strong>: Chỉ Test Agent được chấm bài; chỉ Analysis Agent được ghi Profile thông qua cổng Evidence Service.<br><br>
-              <strong>Cổng Agent bên thứ ba</strong>: Cho phép tích hợp thêm agent môn học mới từ bên ngoài mà <strong>không phải sửa mã nguồn lõi</strong>.
-            </p>
-          </div>
-        </div>
-      </section>
+      <section class="slide" id="slide-5" aria-labelledby="slide-title-5">
+  <div class="kicker"><span class="kicker-dot"></span>Kiến trúc tham chiếu</div>
+  <h1 class="slide-h1" id="slide-title-5">Tách giao diện, điều phối nghiệp vụ và dữ liệu.</h1>
+  <p class="slide-lead">Kiến trúc dưới đây là phương án kỹ thuật được đề xuất trong hồ sơ sản phẩm; cần đối chiếu với mã nguồn triển khai trước khi coi là trạng thái hiện tại.</p>
+  <div class="architecture">
+    <div class="arch-layer"><span class="arch-label">01 · Giao diện</span><strong>Web workspace</strong><p>Next.js + TypeScript (đề xuất) · REST / SSE</p></div>
+    <div class="arch-arrow">↓ API có xác thực · kiểm tra quyền</div>
+    <div class="arch-layer"><span class="arch-label">02 · Dịch vụ</span><strong>API & tác vụ nền</strong><p>FastAPI · worker bất đồng bộ · quy tắc nghiệp vụ</p></div>
+    <div class="arch-arrow">↓ Ghi nhận kết quả có kiểm soát</div>
+    <div class="arch-layer"><span class="arch-label">03 · Dữ liệu</span><strong>Kho bằng chứng & hồ sơ</strong><p>PostgreSQL / Supabase (đề xuất) · lịch sử · nhật ký kiểm tra</p></div>
+  </div>
+  <div class="grid-2 arch-notes">
+    <div class="glass-card"><h2 class="card-h2">Nguyên tắc an toàn</h2><p class="card-body">Xác thực và phân quyền ở phía máy chủ; tối thiểu hóa dữ liệu cá nhân; ghi nhật ký các thay đổi quan trọng; không để trình duyệt truy cập trực tiếp cơ sở dữ liệu.</p></div>
+    <div class="glass-card"><h2 class="card-h2">Nguyên tắc chất lượng</h2><p class="card-body">Tách tạo câu hỏi, kiểm tra đáp án, chấm điểm và cập nhật hồ sơ; có thể truy vết nguồn, phiên bản rubric và lý do cho mỗi kết luận.</p></div>
+  </div>
+</section>
 
       <!-- SLIDE 7: REAL TRACTION & QUALITY PROOF -->
-      <section class="slide" id="slide-6">
-        <div class="kicker"><span class="kicker-dot"></span>Chất lượng Thực nghiệm Được Kiểm chứng</div>
-        <h1 class="slide-h1">Kết quả Vận hành & Chỉ số Đo lường</h1>
-        <p class="slide-lead">Số liệu đo lường thực tế trên môi trường Production, bảo đảm độ tin cậy tuyệt đối trước khi chuyển giao.</p>
-
-        <div class="stat-row">
-          <div class="stat-card">
-            <div class="stat-number">98%</div>
-            <div class="stat-label">Ra đề đúng Format</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">≥ 4.000</div>
-            <div class="stat-label">Câu hỏi Đề trường</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">≥ 95%</div>
-            <div class="stat-label">Chuẩn Sư phạm</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">3 / 3</div>
-            <div class="stat-label">Diễn tập Thành công</div>
-          </div>
-        </div>
-
-        <div class="grid-2">
-          <div class="glass-card">
-            <h2 class="card-h2">Kiểm soát Chất lượng Đề thi Thực tế</h2>
-            <p class="card-body">
-              100% câu hỏi tự sinh của Test Agent phải được English Agent thẩm định đáp án trước khi phát hành. Thuật toán phân tích ma trận đề trường bảo đảm đề luyện bám sát <strong>≥ 80% cấu trúc đề thi chính thức</strong>.
-            </p>
-          </div>
-
-          <div class="glass-card">
-            <h2 class="card-h2">Vượt qua 100% Cổng Kiểm định (Quality Gates)</h2>
-            <p class="card-body">
-              Hệ thống đã trải qua kiểm thử tải và nghiệm thu đa tầng: <strong>0 lỗi nghiêm trọng (Blocker)</strong>, toàn bộ quy trình từ đăng ký, làm bài đến cập nhật hồ sơ năng lực chạy thông suốt liên tục.
-            </p>
-          </div>
-        </div>
-      </section>
+      <section class="slide" id="slide-6" aria-labelledby="slide-title-6">
+  <div class="kicker"><span class="kicker-dot"></span>Kế hoạch chứng minh hiệu quả</div>
+  <h1 class="slide-h1" id="slide-title-6">Đo bằng kết quả — không bằng lời hứa.</h1>
+  <p class="slide-lead">Các con số dưới đây là KPI đề xuất cho pilot, không phải kết quả production đã được xác minh. Chỉ công bố thành tích sau khi có dữ liệu, mẫu đo và phương pháp tính rõ ràng.</p>
+  <div class="stat-row">
+    <div class="stat-card"><div class="stat-number">≥ 95%</div><div class="stat-label">Câu hỏi qua rà soát</div></div>
+    <div class="stat-card"><div class="stat-number">≥ 90%</div><div class="stat-label">Độ khớp rubric chấm</div></div>
+    <div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">Kết quả có thể truy vết</div></div>
+    <div class="stat-card"><div class="stat-number">0</div><div class="stat-label">Lỗi nghiêm trọng chưa xử lý</div></div>
+  </div>
+  <div class="grid-2">
+    <div class="glass-card"><h2 class="card-h2">Đo chất lượng học tập</h2><p class="card-body">Đánh giá độ chính xác đáp án, mức nhất quán giữa người chấm và hệ thống, độ hữu ích của phản hồi, cùng thay đổi ở bài kiểm tra trước–sau.</p></div>
+    <div class="glass-card"><h2 class="card-h2">Công bố minh bạch</h2><p class="card-body">Báo cáo số người tham gia, số câu được đánh giá, tiêu chí đạt, thời gian đo và các giới hạn. Không dùng mục tiêu làm bằng chứng về kết quả.</p></div>
+  </div>
+</section>
 
       <!-- SLIDE 8: ROADMAP & FUTURE MISSION -->
-      <section class="slide" id="slide-7">
-        <div class="kicker"><span class="kicker-dot"></span>Lộ trình Mở rộng Dài hạn</div>
-        <h1 class="slide-h1">Hiện thực hóa Sứ mệnh Hồ sơ Năng lực Trọn đời</h1>
-        <p class="slide-lead">Từ nền móng kiểm chứng thành công tại môn Tiếng Anh 9 đến hệ sinh thái giáo dục toàn diện của Tập đoàn Vingroup.</p>
-
-        <div class="grid-3" style="margin-bottom: 28px;">
-          <div class="glass-card" style="border-top: 3px solid var(--vsf-blue);">
-            <span class="card-badge badge-blue">Giai đoạn 1 · Hiện tại</span>
-            <h2 class="card-h2">Hoàn tất MVP</h2>
-            <p class="card-body">
-              Đóng băng mã nguồn, hoàn thành thắng lợi kịch bản luyện thi Tiếng Anh 9 theo đề trường; chuyển giao bản dựng phục vụ Demo Day và Pilot học sinh.
-            </p>
-          </div>
-
-          <div class="glass-card" style="border-top: 3px solid var(--vsf-cyan);">
-            <span class="card-badge badge-cyan">Giai đoạn 2 · Ngắn hạn</span>
-            <h2 class="card-h2">Nghe - Nói & Giáo viên</h2>
-            <p class="card-body">
-              Tích hợp Audio Streaming Agent để luyện Nghe & Nói 1-on-1 với Tutor; mở rộng Teacher Workspace cho giáo viên tham gia kiểm duyệt kho đề.
-            </p>
-          </div>
-
-          <div class="glass-card" style="border-top: 3px solid var(--vsf-gold);">
-            <span class="card-badge badge-gold">Giai đoạn 3 · Sứ mệnh Lớn</span>
-            <h2 class="card-h2">Đa môn & Liên cấp Vingroup</h2>
-            <p class="card-body">
-              Mở rộng sang môn Toán (tự luận suy luận nhiều bước), Khoa học Tự nhiên; liên cấp từ Tiểu học, THPT lên Đại học trong hệ sinh thái <strong>VinSmart Future / Vingroup</strong>.
-            </p>
-          </div>
-        </div>
-
-        <div style="display: flex; justify-content: center; gap: 18px;">
-          <button class="glass-btn" onclick="jumpToSlide(0)">↺ Xem lại từ đầu</button>
-          <button class="glass-btn glass-btn-primary" onclick="toggleFullscreen()">⛶ Trình chiếu Toàn màn hình</button>
-        </div>
-      </section>
+      <section class="slide" id="slide-7" aria-labelledby="slide-title-7">
+  <div class="kicker"><span class="kicker-dot"></span>Lộ trình & đề nghị tiếp theo</div>
+  <h1 class="slide-h1" id="slide-title-7">Chứng minh vòng lặp trước, mở rộng sau.</h1>
+  <p class="slide-lead">Mục tiêu là xây dựng sản phẩm học tập đáng tin cậy qua từng giai đoạn, với tiêu chí thoát rõ ràng và phản hồi từ người học thật.</p>
+  <div class="grid-3 roadmap-grid">
+    <div class="glass-card" style="border-top:3px solid var(--vsf-blue)"><span class="card-badge badge-blue">Giai đoạn 1 · MVP</span><h2 class="card-h2">Kiểm chứng vòng lặp</h2><p class="card-body">Hoàn thiện luồng làm bài → phản hồi → hồ sơ → kế hoạch; rà soát chất lượng nội dung và thử nghiệm với nhóm nhỏ có giám sát.</p><p class="roadmap-outcome"><strong>Đầu ra:</strong> báo cáo pilot và danh sách lỗi ưu tiên.</p></div>
+    <div class="glass-card" style="border-top:3px solid var(--vsf-cyan)"><span class="card-badge badge-cyan">Giai đoạn 2 · Mở rộng trải nghiệm</span><h2 class="card-h2">Giáo viên & kỹ năng nghe-nói</h2><p class="card-body">Nếu pilot đạt tiêu chí, thử nghiệm công cụ dành cho giáo viên, quy trình duyệt nội dung và luyện nghe-nói có phản hồi.</p><p class="roadmap-outcome"><strong>Đầu ra:</strong> quy trình vận hành và chỉ số sử dụng.</p></div>
+    <div class="glass-card" style="border-top:3px solid var(--vsf-gold)"><span class="card-badge badge-gold">Giai đoạn 3 · Mở rộng phạm vi</span><h2 class="card-h2">Thêm môn học, thêm cấp học</h2><p class="card-body">Chỉ mở rộng sang Toán, Khoa học và nhóm tuổi khác khi có dữ liệu chứng minh chất lượng, an toàn và nhu cầu thực tế.</p><p class="roadmap-outcome"><strong>Đầu ra:</strong> tiêu chí mở rộng và kế hoạch nguồn lực.</p></div>
+  </div>
+  <div class="closing-ask"><strong>Đề nghị:</strong> thống nhất phạm vi pilot, nhóm học sinh thử nghiệm, tiêu chí thành công và người phụ trách xác nhận dữ liệu.</div>
+  <div class="closing-actions"><button class="glass-btn" onclick="jumpToSlide(0)">↺ Xem lại từ đầu</button><button class="glass-btn glass-btn-primary" onclick="toggleFullscreen()">⛶ Trình chiếu toàn màn hình</button></div>
+</section>
 
     </div>
   </main>
@@ -1139,9 +1058,7 @@
   <!-- FOOTER -->
   <footer class="deck-footer">
     <div style="font-size: 13px; color: var(--text-dim); display: flex; align-items: center; gap: 8px;">
-      <span style="font-weight: 700; color: var(--text-sub);">VinSmart Future (VSF)</span>
-      <span>•</span>
-      <span>EduMind · The Rising of V</span>
+      <span style="font-weight: 700; color: var(--text-sub);">EduMind</span><span>•</span><span>Học tập có bằng chứng</span>
     </div>
 
     <div class="progress-track">
@@ -1150,149 +1067,130 @@
 
     <div class="nav-actions">
       <div class="nav-dots" id="dotsContainer"></div>
-      <button class="glass-btn" id="btnPrev" onclick="prevSlide()" disabled>← Trước</button>
-      <button class="glass-btn" id="btnNext" onclick="nextSlide()">Sau →</button>
-      <button class="glass-btn" id="btnFs" onclick="toggleFullscreen()" title="Toàn màn hình">⛶</button>
+      <button class="glass-btn" id="btnPrev" onclick="prevSlide()" aria-label="Slide trước" disabled>← Trước</button>
+      <button class="glass-btn" id="btnNext" onclick="nextSlide()" aria-label="Slide tiếp theo">Sau →</button>
+      <button class="glass-btn" id="btnFs" onclick="toggleFullscreen()" title="Toàn màn hình" aria-label="Bật hoặc tắt toàn màn hình">⛶</button>
     </div>
   </footer>
 
   <script>
-    (function () {
-      const TOTAL_SLIDES = 8;
-      let currentIndex = 0;
+(function () {
+  'use strict';
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const totalSlides = slides.length;
+  const dotsContainer = document.getElementById('dotsContainer');
+  const progressBar = document.getElementById('progressBar');
+  const slideIndicator = document.getElementById('slideIndicator');
+  const btnPrev = document.getElementById('btnPrev');
+  const btnNext = document.getElementById('btnNext');
+  const viewport = document.querySelector('.slide-viewport');
+  if (!totalSlides) return;
 
-      const slides = document.querySelectorAll('.slide');
-      const dotsContainer = document.getElementById('dotsContainer');
-      const progressBar = document.getElementById('progressBar');
-      const slideIndicator = document.getElementById('slideIndicator');
-      const btnPrev = document.getElementById('btnPrev');
-      const btnNext = document.getElementById('btnNext');
+  let currentIndex = Math.max(0, Math.min(totalSlides - 1, Number(location.hash.match(/^#slide-(\\d+)$/)?.[1] || 0)));
+  const dots = slides.map((slide, index) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'nav-dot';
+    dot.setAttribute('aria-label', 'Đi tới slide ' + (index + 1));
+    dot.addEventListener('click', () => jumpToSlide(index));
+    dotsContainer.appendChild(dot);
+    return dot;
+  });
 
-      // Initialize navigation dots
-      for (let i = 0; i < TOTAL_SLIDES; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
-        dot.setAttribute('title', 'Slide ' + (i + 1));
-        dot.addEventListener('click', () => jumpToSlide(i));
-        dotsContainer.appendChild(dot);
-      }
+  function updateSlideUI(updateHash = true) {
+    slides.forEach((slide, index) => {
+      const active = index === currentIndex;
+      slide.classList.toggle('active', active);
+      slide.setAttribute('aria-hidden', String(!active));
+      slide.inert = !active;
+    });
+    dots.forEach((dot, index) => {
+      if (index === currentIndex) dot.setAttribute('aria-current', 'step');
+      else dot.removeAttribute('aria-current');
+      dot.classList.toggle('active', index === currentIndex);
+    });
+    progressBar.style.width = (((currentIndex + 1) / totalSlides) * 100) + '%';
+    slideIndicator.textContent = String(currentIndex + 1).padStart(2, '0') + ' / ' + String(totalSlides).padStart(2, '0');
+    btnPrev.disabled = currentIndex === 0;
+    btnNext.disabled = currentIndex === totalSlides - 1;
+    if (updateHash) history.replaceState(null, '', '#slide-' + currentIndex);
+  }
 
-      const dots = document.querySelectorAll('.nav-dot');
-
-      function updateSlideUI() {
-        slides.forEach((slide, idx) => {
-          if (idx === currentIndex) {
-            slide.classList.add('active');
-          } else {
-            slide.classList.remove('active');
-          }
-        });
-
-        dots.forEach((dot, idx) => {
-          if (idx === currentIndex) {
-            dot.classList.add('active');
-          } else {
-            dot.classList.remove('active');
-          }
-        });
-
-        const progressPercent = ((currentIndex + 1) / TOTAL_SLIDES) * 100;
-        progressBar.style.width = progressPercent + '%';
-
-        const currentFormatted = String(currentIndex + 1).padStart(2, '0');
-        const totalFormatted = String(TOTAL_SLIDES).padStart(2, '0');
-        slideIndicator.textContent = currentFormatted + ' / ' + totalFormatted;
-
-        btnPrev.disabled = currentIndex === 0;
-        btnNext.disabled = currentIndex === TOTAL_SLIDES - 1;
-      }
-
-      window.nextSlide = function () {
-        if (currentIndex < TOTAL_SLIDES - 1) {
-          currentIndex++;
-          updateSlideUI();
-        }
-      };
-
-      window.prevSlide = function () {
-        if (currentIndex > 0) {
-          currentIndex--;
-          updateSlideUI();
-        }
-      };
-
-      window.jumpToSlide = function (idx) {
-        if (idx >= 0 && idx < TOTAL_SLIDES) {
-          currentIndex = idx;
-          updateSlideUI();
-        }
-      };
-
-      window.toggleFullscreen = function () {
-        if (!document.fullscreenElement) {
-          document.documentElement.requestFullscreen().catch((err) => {
-            console.warn('Cannot enter fullscreen:', err.message);
-          });
-        } else {
-          if (document.exitFullscreen) {
-            document.exitFullscreen();
-          }
-        }
-      };
-
-      // Keyboard navigation
-      window.addEventListener('keydown', function (e) {
-        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-
-        switch (e.key) {
-          case 'ArrowRight':
-          case 'ArrowDown':
-          case 'PageDown':
-          case ' ':
-            e.preventDefault();
-            nextSlide();
-            break;
-          case 'ArrowLeft':
-          case 'ArrowUp':
-          case 'PageUp':
-          case 'Backspace':
-            e.preventDefault();
-            prevSlide();
-            break;
-          case 'Home':
-            e.preventDefault();
-            jumpToSlide(0);
-            break;
-          case 'End':
-            e.preventDefault();
-            jumpToSlide(TOTAL_SLIDES - 1);
-            break;
-          case 'f':
-          case 'F':
-            e.preventDefault();
-            toggleFullscreen();
-            break;
-        }
-      });
-
-      // Touch / Swipe gestures
-      let touchStartX = 0;
-      let touchEndX = 0;
-      window.addEventListener('touchstart', function (e) {
-        touchStartX = e.changedTouches[0].screenX;
-      }, { passive: true });
-
-      window.addEventListener('touchend', function (e) {
-        touchEndX = e.changedTouches[0].screenX;
-        const diffX = touchStartX - touchEndX;
-        if (Math.abs(diffX) > 50) {
-          if (diffX > 0) nextSlide();
-          else prevSlide();
-        }
-      }, { passive: true });
-
+  window.nextSlide = function () {
+    if (currentIndex < totalSlides - 1) { currentIndex++; updateSlideUI(); }
+  };
+  window.prevSlide = function () {
+    if (currentIndex > 0) { currentIndex--; updateSlideUI(); }
+  };
+  window.jumpToSlide = function (index) {
+    const target = Number(index);
+    if (Number.isInteger(target) && target >= 0 && target < totalSlides) {
+      currentIndex = target;
       updateSlideUI();
-    })();
-  </script>
+    }
+  };
+  window.toggleFullscreen = async function () {
+    try {
+      if (!document.fullscreenElement) {
+        if (document.documentElement.requestFullscreen) await document.documentElement.requestFullscreen();
+      } else if (document.exitFullscreen) {
+        await document.exitFullscreen();
+      }
+    } catch (error) {
+      console.warn('Không thể đổi chế độ toàn màn hình:', error);
+    }
+  };
+
+  window.addEventListener('keydown', function (event) {
+    const target = event.target;
+    if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey) return;
+    if (target && (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName))) return;
+    if (target && target.closest && target.closest('button, a, [role="textbox"]') && !['Escape'].includes(event.key)) {
+      if (!['ArrowRight','ArrowLeft','PageDown','PageUp','Home','End','f','F'].includes(event.key)) return;
+    }
+    switch (event.key) {
+      case 'ArrowRight': case 'ArrowDown': case 'PageDown':
+        event.preventDefault(); nextSlide(); break;
+      case 'ArrowLeft': case 'ArrowUp': case 'PageUp':
+        event.preventDefault(); prevSlide(); break;
+      case 'Home':
+        event.preventDefault(); jumpToSlide(0); break;
+      case 'End':
+        event.preventDefault(); jumpToSlide(totalSlides - 1); break;
+      case 'f': case 'F':
+        event.preventDefault(); toggleFullscreen(); break;
+      case ' ':
+        if (target === document.body || target === document.documentElement || target === viewport) {
+          event.preventDefault(); nextSlide();
+        }
+        break;
+    }
+  });
+
+  let touchStartX = 0, touchStartY = 0;
+  viewport.addEventListener('touchstart', function (event) {
+    if (!event.changedTouches.length) return;
+    const target = event.target;
+    if (target.closest && target.closest('button, a, table, .glass-table')) { touchStartX = 0; return; }
+    touchStartX = event.changedTouches[0].clientX;
+    touchStartY = event.changedTouches[0].clientY;
+  }, { passive: true });
+  viewport.addEventListener('touchend', function (event) {
+    if (!touchStartX || !event.changedTouches.length) return;
+    const dx = touchStartX - event.changedTouches[0].clientX;
+    const dy = touchStartY - event.changedTouches[0].clientY;
+    touchStartX = 0;
+    if (Math.abs(dx) > 65 && Math.abs(dx) > Math.abs(dy) * 1.25) {
+      if (dx > 0) nextSlide(); else prevSlide();
+    }
+  }, { passive: true });
+
+  window.addEventListener('hashchange', function () {
+    const match = location.hash.match(/^#slide-(\\d+)$/);
+    if (match) window.jumpToSlide(Number(match[1]));
+  });
+  updateSlideUI(false);
+})();
+</script>
 </body>
 </html>
