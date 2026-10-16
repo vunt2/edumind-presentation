@@ -1086,7 +1086,7 @@
   const viewport = document.querySelector('.slide-viewport');
   if (!totalSlides) return;
 
-  let currentIndex = Math.max(0, Math.min(totalSlides - 1, Number(location.hash.match(/^#slide-(\\d+)$/)?.[1] || 0)));
+  let currentIndex = Math.max(0, Math.min(totalSlides - 1, Number(location.hash.match(/^#slide-(\d+)$/)?.[1] || 0)));
   const dots = slides.map((slide, index) => {
     const dot = document.createElement('button');
     dot.type = 'button';
@@ -1186,7 +1186,7 @@
   }, { passive: true });
 
   window.addEventListener('hashchange', function () {
-    const match = location.hash.match(/^#slide-(\\d+)$/);
+    const match = location.hash.match(/^#slide-(\d+)$/);
     if (match) window.jumpToSlide(Number(match[1]));
   });
   updateSlideUI(false);
