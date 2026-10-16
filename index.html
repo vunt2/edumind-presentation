@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#eaf3ff">
-<title>EduMind — Product Direction</title>
+<title>EduMind — Lifelong Learner Profile</title>
 <style>
 :root{--ink:#18324d;--muted:#58718a;--blue:#347dc5;--cyan:#79d0f0;--glass:rgba(255,255,255,.48);--line:rgba(255,255,255,.82);--shadow:0 24px 70px rgba(31,69,106,.18);--ease:cubic-bezier(.2,.8,.2,1)}
 *{box-sizing:border-box}html,body{height:100%;margin:0}body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#e9f3ff;overflow:hidden}
-body:before{content:"";position:fixed;inset:0;background:linear-gradient(120deg,rgba(239,247,255,.5),rgba(218,236,253,.28)),url("./background-vsf.jpg") center/cover no-repeat;z-index:-3;transform:scale(1.02)}
+body:before{content:"";position:fixed;inset:0;background:linear-gradient(120deg,rgba(239,247,255,.5),rgba(218,236,253,.28)),url("./background-vsf.jpg") center/contain no-repeat;z-index:-3;transform:scale(1.02)}
 body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background:radial-gradient(ellipse at 15% 12%,rgba(255,255,255,.78),transparent 36%),radial-gradient(ellipse at 85% 80%,rgba(113,193,237,.25),transparent 36%)}
 button{font:inherit;color:inherit}.app{height:100%;display:grid;grid-template-columns:264px minmax(0,1fr);gap:18px;padding:18px;max-width:1800px;margin:auto}
 .glass{background:rgba(255,255,255,.48);border:1px solid rgba(255,255,255,.78);box-shadow:inset 0 1px 1px rgba(255,255,255,.95),0 18px 55px rgba(38,75,112,.13);backdrop-filter:blur(34px) saturate(155%);-webkit-backdrop-filter:blur(34px) saturate(155%)}
@@ -27,7 +27,7 @@ button{font:inherit;color:inherit}.app{height:100%;display:grid;grid-template-co
 .nav-title{font-size:12.5px;white-space:nowrap}
 .sidebar-bottom{margin-top:auto;padding:18px 10px 3px;border-top:1px solid rgba(70,111,150,.13);color:#7890a6;font-size:11px;line-height:1.6}
 .status-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#4cbca1;margin-right:7px;box-shadow:0 0 9px rgba(76,188,161,.5)}
-.workspace{min-width:0;display:flex;flex-direction:column;gap:14px;min-height:0}
+.workspace{min-width:0;display:flex;flex-direction:column;gap:0;min-height:0}
 .topbar{height:66px;flex-shrink:0;border-radius:23px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .eyebrow{font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:#64849f;font-weight:850;margin-bottom:4px}
 .top-title{font-size:16px;font-weight:800;letter-spacing:-.025em}.top-right{display:flex;align-items:center;gap:12px}.counter{font-size:12px;font-weight:800;color:#3c6c95;background:rgba(255,255,255,.67);border:1px solid rgba(255,255,255,.9);padding:9px 13px;border-radius:14px;font-variant-numeric:tabular-nums}.key-hint{font-size:11px;color:#7b92a7}
@@ -73,7 +73,7 @@ h1{font-size:clamp(30px,3.25vw,51px);letter-spacing:-.055em;line-height:1.08;mar
 <body>
 <div class="app">
   <aside class="sidebar glass" aria-label="Điều hướng pitch deck">
-    <div class="brand"><img src="./logovsf.jpg" alt="Logo VSF"><div><div class="brand-name">EduMind</div><div class="brand-sub">Learning intelligence</div></div></div>
+    <div class="brand"><img src="./logovsf.jpg" alt="Logo VSF"><div><div class="brand-name">EduMind</div><div class="brand-sub">Lifelong Learner Profile</div></div></div>
     <div class="nav-label">Product direction · 10 phần</div>
     <nav class="nav" id="nav">
       <div class="liquid-active" id="liquidActive" aria-hidden="true"></div>
@@ -88,18 +88,13 @@ h1{font-size:clamp(30px,3.25vw,51px);letter-spacing:-.055em;line-height:1.08;mar
       <button class="nav-item" data-slide="8"><span class="nav-num">09</span><span class="nav-title">Lộ trình phát triển</span></button>
       <button class="nav-item" data-slide="9"><span class="nav-num">10</span><span class="nav-title">Điều cần thống nhất</span></button>
     </nav>
-    <div class="sidebar-bottom"><span class="status-dot"></span>Pitch direction · bản thảo thảo luận<br>10 nội dung · 15 phút trình bày</div>
   </aside>
   <section class="workspace">
-    <header class="topbar glass">
-      <div><div class="eyebrow">EduMind / Product strategy</div><div class="top-title" id="topTitle">Tầm nhìn dài hạn</div></div>
-      <div class="top-right"><span class="key-hint">Dùng ← → để chuyển tab</span><span class="counter" id="counter">01 <span style="opacity:.45">/</span> 10</span></div>
-    </header>
     <main class="stage glass" id="stage">
       <section class="slide active" id="slide-0" aria-label="Slide 1: Tầm nhìn">
         <div class="kicker"><i></i>01 · Product vision</div>
-        <h1>EduMind không chỉ giúp học tốt hơn hôm nay.<br><span class="gradient-text">Mà giúp hiểu rõ năng lực qua thời gian.</span></h1>
-        <p class="lead">Một trải nghiệm học tập nối liền bài làm, phản hồi, luyện tập và hồ sơ tiến bộ — để mỗi người học hiểu mình đang ở đâu, cần cải thiện điều gì và nên làm gì tiếp theo.</p>
+        <h1><span class="gradient-text">Một hồ sơ năng lực, đồng hành cùng bạn suốt đời.</span></h1>
+        <p class="lead">EduMind ghi nhớ bạn làm được gì và còn vướng ở đâu qua từng môn học, từng năm học, rồi cùng sáu agent AI ra đề, chấm bài và đề xuất lộ trình vừa sức cho mỗi mục tiêu của bạn.</p>
         <div class="cards cols3">
           <article class="card"><div class="card-tag">01 / Understand</div><h2>Hiểu người học</h2><p>Không chỉ lưu điểm số; hướng tới nhận diện kỹ năng, mẫu lỗi, tiến bộ và mục tiêu cá nhân.</p></article>
           <article class="card"><div class="card-tag">02 / Support</div><h2>Hỗ trợ đúng lúc</h2><p>Gia sư AI và hoạt động luyện tập giúp chuyển nhận xét thành bước hành động cụ thể.</p></article>
@@ -227,10 +222,6 @@ h1{font-size:clamp(30px,3.25vw,51px);letter-spacing:-.055em;line-height:1.08;mar
         <div class="request"><h2>Đề nghị quyết định</h2><p>Cho phép đội ngũ tiếp tục theo hướng này, xác nhận phạm vi MVP và tiêu chí đánh giá — sau đó quay lại bằng kết quả pilot cùng đề xuất bước tiếp theo.</p></div>
       </section>
     </main>
-    <footer class="footer glass">
-      <span class="footer-label">EDUMIND · PRODUCT DIRECTION</span><div class="progress"><div class="progress-fill" id="progressFill"></div></div>
-      <div class="footer-actions"><button class="footer-btn" id="prevBtn">← Trước</button><button class="footer-btn next" id="nextBtn">Tiếp →</button></div>
-    </footer>
   </section>
 </div>
 <script>
@@ -240,11 +231,7 @@ h1{font-size:clamp(30px,3.25vw,51px);letter-spacing:-.055em;line-height:1.08;mar
  const titles=['Tầm nhìn dài hạn','Vấn đề người học','Giá trị khác biệt','Vòng lặp học tập','Demo sản phẩm','MVP 6 tuần','Mở rộng hệ sinh thái','Niềm tin & đo lường','Lộ trình phát triển','Điều cần thống nhất'];
  const indicator=document.getElementById('liquidActive');
  const nav=document.getElementById('nav');
- const counter=document.getElementById('counter');
- const topTitle=document.getElementById('topTitle');
- const progress=document.getElementById('progressFill');
- const prevBtn=document.getElementById('prevBtn');
- const nextBtn=document.getElementById('nextBtn');
+
  let current=0;
  function moveIndicator(){
    if(!navItems[current]||!indicator)return;
@@ -256,15 +243,10 @@ h1{font-size:clamp(30px,3.25vw,51px);letter-spacing:-.055em;line-height:1.08;mar
    current=Math.max(0,Math.min(slides.length-1,index));
    slides.forEach((slide,i)=>{slide.classList.toggle('active',i===current);slide.setAttribute('aria-hidden',i===current?'false':'true')});
    navItems.forEach((item,i)=>{item.classList.toggle('active',i===current);item.setAttribute('aria-current',i===current?'page':'false')});
-   counter.innerHTML=String(current+1).padStart(2,'0')+' <span style="opacity:.45">/</span> 10';
-   topTitle.textContent=titles[current];
-   progress.style.width=((current+1)/slides.length*100)+'%';
-   prevBtn.disabled=current===0;nextBtn.disabled=current===slides.length-1;
+
    moveIndicator();
  }
  navItems.forEach(item=>item.addEventListener('click',()=>showSlide(Number(item.dataset.slide))));
- prevBtn.addEventListener('click',()=>showSlide(current-1));
- nextBtn.addEventListener('click',()=>showSlide(current+1));
  document.addEventListener('keydown',e=>{
    if(['ArrowRight','ArrowLeft'].includes(e.key)){
      if(e.altKey||e.ctrlKey||e.metaKey)return;
