@@ -611,6 +611,178 @@
       box-shadow: 0 0 10px var(--vsf-cyan);
       transform: scale(1.35);
     }
+
+    /* LIGHT LIQUID GLASS — architectural, airy, readable */
+    :root {
+      --vsf-navy: #eaf4ff;
+      --vsf-blue: #2868d9;
+      --vsf-cyan: #55aee8;
+      --vsf-red: #da251d;
+      --vsf-gold: #b9852c;
+      --text-main: #18304c;
+      --text-sub: #405a74;
+      --text-dim: #60758b;
+      --glass-bg: rgba(255, 255, 255, 0.72);
+      --glass-bg-hover: rgba(255, 255, 255, 0.88);
+      --glass-border: rgba(255, 255, 255, 0.78);
+      --glass-border-hover: rgba(68, 151, 218, 0.55);
+      --glass-specular: inset 0 1.5px 1px rgba(255,255,255,.95);
+      --glass-shadow: 0 24px 60px -12px rgba(38, 74, 112, .20);
+    }
+
+    body {
+      color: var(--text-main);
+      background:
+        radial-gradient(ellipse at 12% 12%, rgba(255,255,255,.98) 0%, transparent 42%),
+        radial-gradient(ellipse at 82% 22%, rgba(164,214,249,.48) 0%, transparent 40%),
+        linear-gradient(145deg, #f7fbff 0%, #e7f3ff 52%, #d9eafa 100%);
+    }
+
+    /* Soft architectural backdrop treatment; retain a calm fallback if the image is unavailable. */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(247,251,255,.70), rgba(235,245,255,.80)),
+        url("background-vsf.jpg") center 48% / cover no-repeat;
+      filter: saturate(.72);
+      transform: scale(1.015);
+    }
+
+    .liquid-mesh { opacity: .28; }
+    .liquid-orb { filter: blur(110px); opacity: .24; }
+    .orb-1 { background: radial-gradient(circle, #8dc6f4 0%, rgba(141,198,244,0) 70%); }
+    .orb-2 { background: radial-gradient(circle, #bce8f8 0%, rgba(188,232,248,0) 70%); }
+    .orb-3 { background: radial-gradient(circle, rgba(218,37,29,.13) 0%, rgba(218,37,29,0) 70%); }
+    .orb-4 { background: radial-gradient(circle, rgba(115,169,226,.22) 0%, rgba(115,169,226,0) 70%); }
+
+    header.deck-header, footer.deck-footer {
+      background: rgba(255,255,255,.64);
+      border-color: rgba(255,255,255,.85);
+      box-shadow: 0 8px 28px rgba(53,91,128,.08);
+      backdrop-filter: blur(30px) saturate(155%);
+      -webkit-backdrop-filter: blur(30px) saturate(155%);
+    }
+    .vsf-logo-badge {
+      background: rgba(255,255,255,.72);
+      border-color: rgba(218,37,29,.16);
+      box-shadow: inset 0 1px 1px rgba(255,255,255,.95), 0 5px 18px rgba(50,80,110,.08);
+    }
+    .vsf-brand-title { color: #d91f2a; }
+    .vsf-brand-sub { color: #55718b; }
+    .vsf-v-symbol svg path { fill: #d91f2a; }
+    .vsf-v-symbol svg path:nth-child(2) { fill: #ed3940; }
+    .vsf-v-symbol svg path:nth-child(3) { fill: #f47a80; }
+
+    .deck-title-inline { color: #24435f; }
+    .deck-title-inline .highlight { color: #2f78ba; }
+    .slide-badge-counter {
+      color: #284763;
+      background: rgba(255,255,255,.7);
+      border-color: rgba(84,158,213,.38);
+      box-shadow: 0 5px 18px rgba(63,123,170,.10);
+    }
+    main.stage { z-index: 10; }
+    .slide {
+      background: rgba(255,255,255,.74);
+      border-color: rgba(255,255,255,.88);
+      color: var(--text-main);
+      box-shadow: inset 0 1.5px 1px rgba(255,255,255,.98), 0 24px 70px rgba(54,91,127,.18);
+      backdrop-filter: blur(34px) saturate(150%);
+      -webkit-backdrop-filter: blur(34px) saturate(150%);
+    }
+    .kicker, .hero-tagline-main { color: #2677b7; }
+    .kicker-dot { background: #4ca8df; box-shadow: 0 0 12px rgba(76,168,223,.38); }
+    .slide-h1, .card-h2, .card-body strong, .glass-table th { color: #1d3854; }
+    .slide-lead, .card-body, .glass-table td { color: #405a74; }
+    .hero-title-main {
+      background: linear-gradient(135deg, #183a60 15%, #3988c8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-desc-main { color: #405a74; }
+    .hero-visual-card, .glass-card, .stat-card {
+      background: rgba(255,255,255,.48);
+      border-color: rgba(255,255,255,.88);
+      box-shadow: inset 0 1px 1px rgba(255,255,255,.96), 0 10px 30px rgba(45,82,119,.07);
+    }
+    .glass-card:hover {
+      background: rgba(255,255,255,.82);
+      border-color: rgba(79,157,213,.5);
+      box-shadow: inset 0 1px 1px rgba(255,255,255,.98), 0 18px 34px rgba(45,82,119,.12);
+    }
+    .glass-table { background: rgba(255,255,255,.46); border-color: rgba(255,255,255,.92); }
+    .glass-table th { background: rgba(220,239,253,.72); border-color: rgba(99,151,191,.18); }
+    .glass-table td { border-color: rgba(99,151,191,.15); }
+    .glass-table tr:hover td { background: rgba(217,239,255,.52); }
+    .stat-number {
+      background: linear-gradient(135deg, #234d75 25%, #398dcc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .stat-label { color: #4c6780; }
+    .glass-btn {
+      color: #254561;
+      background: rgba(255,255,255,.72);
+      border-color: rgba(255,255,255,.92);
+      box-shadow: inset 0 1px 1px rgba(255,255,255,.98), 0 5px 18px rgba(47,83,117,.08);
+    }
+    .glass-btn:hover:not(:disabled) { background: rgba(255,255,255,.94); border-color: rgba(91,158,207,.45); }
+    .glass-btn-primary {
+      color: white;
+      background: linear-gradient(135deg, #2c75c9, #5aa9e2);
+      border-color: rgba(255,255,255,.9);
+      box-shadow: 0 8px 22px rgba(44,117,201,.24);
+    }
+    .glass-btn-primary:hover { box-shadow: 0 10px 28px rgba(44,117,201,.32); }
+    .nav-dot { background: rgba(58,103,143,.22); }
+    .nav-dot.active { background: #388fce; box-shadow: 0 0 10px rgba(56,143,206,.35); }
+    .progress-track { background: rgba(57,102,143,.12); }
+    .progress-bar { background: linear-gradient(90deg, #347fca, #77c5ed); box-shadow: 0 0 12px rgba(83,174,225,.45); }
+    footer.deck-footer span { color: #5d7388 !important; }
+    footer.deck-footer span:first-child { color: #294965 !important; }
+
+    @media (max-width: 900px) {
+      header.deck-header { padding: 0 18px; }
+      .deck-title-inline { font-size: 13px; }
+      main.stage { padding: 16px; }
+      .slide { padding: 28px 26px; }
+      footer.deck-footer { padding: 0 16px; }
+    }
+    @media (max-width: 640px) {
+      body { overflow: auto; min-height: 100vh; height: auto; }
+      header.deck-header { min-height: 62px; height: auto; gap: 10px; padding: 10px 12px; }
+      .brand-cluster { gap: 8px; min-width: 0; }
+      .vsf-logo-badge { padding: 5px 8px; gap: 6px; }
+      .vsf-brand-title { font-size: 10px; }
+      .vsf-brand-sub { font-size: 8px; }
+      .deck-title-inline { display: none; }
+      .slide-badge-counter { font-size: 11px; padding: 5px 9px; }
+      main.stage { padding: 14px 12px; min-height: calc(100vh - 132px); }
+      .slide-viewport { min-height: 650px; height: auto; aspect-ratio: auto; }
+      .slide { padding: 24px 18px; border-radius: 22px; }
+      .hero-split, .grid-2, .grid-3, .stat-row { grid-template-columns: 1fr; gap: 14px; }
+      .hero-title-main { font-size: clamp(42px, 12vw, 58px); }
+      .hero-tagline-main { font-size: 20px; }
+      .slide-h1 { font-size: clamp(26px, 7vw, 34px); }
+      .slide-lead { font-size: 15px; margin-bottom: 20px; }
+      .hero-mascot-img { width: min(190px, 60vw); height: min(190px, 60vw); }
+      .glass-card, .stat-card { padding: 18px; }
+      .glass-table { display: block; overflow-x: auto; white-space: normal; }
+      footer.deck-footer { min-height: 68px; height: auto; padding: 10px 12px; gap: 10px; flex-wrap: wrap; }
+      .progress-track { order: 3; flex-basis: 100%; margin: 0; max-width: none; }
+      .nav-actions { gap: 6px; }
+      .nav-dots { display: none; }
+      .glass-btn { padding: 8px 11px; font-size: 12px; }
+      .slide-viewport { min-height: 720px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    }
+
   </style>
 </head>
 <body>
@@ -642,10 +814,8 @@
         </div>
       </div>
 
-      <div class="deck-title-inline">
+      <div class="deck-title-inline" aria-label="EduMind presentation">
         <span>EduMind</span>
-        <span class="sep">/</span>
-        <span class="highlight">Lifelong Learner Profile</span>
       </div>
     </div>
 
