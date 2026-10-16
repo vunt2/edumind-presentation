@@ -194,6 +194,22 @@ body:after{
   body:before{filter:blur(3px) saturate(108%);transform:scale(1.04)}
 }
 
+
+/* Strongly defocused wallpaper for a pronounced Liquid Glass backdrop */
+body:before{
+  filter:blur(15px) saturate(112%);
+  transform:scale(1.12);
+}
+body:after{
+  background:
+    linear-gradient(135deg,rgba(235,246,255,.06),rgba(202,229,250,.04)),
+    radial-gradient(ellipse at 15% 12%,rgba(255,255,255,.06),transparent 36%),
+    radial-gradient(ellipse at 85% 80%,rgba(113,193,237,.06),transparent 36%);
+}
+@media (max-width:720px){
+  body:before{filter:blur(11px) saturate(110%);transform:scale(1.1)}
+}
+
 </style>
 </head>
 <body>
