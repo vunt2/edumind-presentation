@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#dcecff">
 <title>EduMind — Lifelong Learner Profile</title>
-<link rel="icon" type="image/png" href="./favicon.png">
+<link rel="icon" type="image/png" href="./images/favicon.png">
 <style>
 :root {
   --ink: #18324d;
@@ -1814,9 +1814,9 @@ h1 {
 </head>
 <body>
 <div class="app" id="appRoot">
-  <img class="app-bg" id="appBg" src="./background-vsf.jpg" alt="" style="position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none;">
+  <img class="app-bg" id="appBg" src="./images/background-vsf.jpg" alt="" style="position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none;">
   <aside class="sidebar glass" id="sidebarGlass" aria-label="Điều hướng pitch deck">
-      <div class="brand"><img src="./favicon.png" alt="EduMind Logo"><div><div class="brand-name">EduMind</div><div class="brand-sub">Lifelong Learner Profile</div></div></div>
+      <div class="brand"><img src="./images/favicon.png" alt="EduMind Logo"><div><div class="brand-name">EduMind</div><div class="brand-sub">Lifelong Learner Profile</div></div></div>
       <nav class="nav" id="nav">
         <div class="liquid-active" id="liquidActive" aria-hidden="true"></div>
         <button class="nav-item active" data-slide="0"><span class="nav-num">01</span><span class="nav-title">Tổng quan</span></button>
@@ -1932,7 +1932,7 @@ h1 {
         </div>
         <div class="gallery-panel glass-panel">
           <div class="gallery">
-            <div class="gallery-main"><img id="galleryImage" src="./tongquan.png" alt="Ảnh demo sản phẩm EduMind: tổng quan" decoding="async"></div>
+            <div class="gallery-main"><img id="galleryImage" src="./images/tongquan.png" alt="Ảnh demo sản phẩm EduMind: tổng quan" decoding="async"></div>
           </div>
         </div>
       </section>
@@ -2175,7 +2175,7 @@ h1 {
    if (!demoImages.length) return;
    imageIndex = Math.max(0, Math.min(demoImages.length - 1, index));
    const item = demoImages[imageIndex];
-   const src = './' + item.image;
+   const src = './images/' + item.image;
    const label = item.label;
    galleryImage.style.opacity = '0.25';
    const preload = new Image();
@@ -2253,7 +2253,7 @@ h1 {
   function playTrack(index) {
     if (!musicPlaylist.length || !bgAudio) return;
     currentTrackIdx = (index + musicPlaylist.length) % musicPlaylist.length;
-    bgAudio.src = encodeURI('./' + musicPlaylist[currentTrackIdx]);
+    bgAudio.src = encodeURI('./audio/' + musicPlaylist[currentTrackIdx]);
     bgAudio.load();
     if (musicProgress) musicProgress.value = 0;
     if (musicProgressFill) musicProgressFill.style.width = '0%';
