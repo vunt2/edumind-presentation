@@ -14,7 +14,7 @@ button{font:inherit;color:inherit}.app{height:100%;display:grid;grid-template-co
 .glass{position:relative;background:linear-gradient(135deg,rgba(255,255,255,.22),rgba(227,244,255,.12) 42%,rgba(255,255,255,.19));border:1px solid rgba(255,255,255,.7);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.88),inset 1px 0 0 rgba(255,255,255,.38),inset 0 -1px 0 rgba(179,221,250,.3),0 22px 65px rgba(31,69,106,.16);backdrop-filter:blur(25px) saturate(185%) contrast(108%);-webkit-backdrop-filter:blur(25px) saturate(185%) contrast(108%)}
 .glass:before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;border-radius:inherit;background:radial-gradient(ellipse at 8% 0%,rgba(255,255,255,.62),transparent 36%),radial-gradient(ellipse at 100% 15%,rgba(141,218,255,.17),transparent 38%),linear-gradient(155deg,rgba(255,255,255,.18),transparent 32%,rgba(113,190,239,.07) 72%,rgba(255,255,255,.13));}
 .glass:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.17),inset 0 12px 28px rgba(255,255,255,.08);}
-.sidebar>* ,.stage>*{position:relative;z-index:1}
+.sidebar>*{position:relative;z-index:1}.stage>.slide{position:absolute;inset:0;z-index:1}
 
 .sidebar{border-radius:28px;padding:20px 14px;display:flex;flex-direction:column;min-height:0;position:relative;overflow:hidden}
 .brand{display:flex;align-items:center;gap:11px;padding:5px 10px 22px;border-bottom:1px solid rgba(70,111,150,.13)}
