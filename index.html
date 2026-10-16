@@ -72,9 +72,61 @@ h1{font-size:clamp(30px,3.25vw,51px);letter-spacing:-.055em;line-height:1.08;mar
 @media(max-width:1050px){.app{grid-template-columns:220px minmax(0,1fr);gap:12px;padding:12px}.sidebar{padding:16px 10px}.nav-title{font-size:11.5px}.gallery{grid-template-columns:minmax(0,1fr) 150px}.thumb img{width:44px}.slide{padding:28px}.cols3{grid-template-columns:repeat(2,minmax(0,1fr))}.flow{grid-template-columns:repeat(2,minmax(0,1fr))}.flow-step:after{display:none!important}}
 @media(max-width:720px){body{overflow:auto}.app{height:auto;min-height:100%;display:flex;flex-direction:column;padding:9px;gap:9px}.sidebar{padding:10px;border-radius:20px}.brand{padding:2px 5px 10px;border:0}.brand img{width:34px;height:34px}.brand-name{font-size:14px}.brand-sub{font-size:8px}.nav-label,.sidebar-bottom{display:none}.nav{flex-direction:row;overflow-x:auto;padding:8px 1px 3px;gap:5px}.liquid-active{display:none}.nav-item{height:38px;min-width:42px;width:auto;padding:0 9px;gap:6px;background:rgba(255,255,255,.28)}.nav-title{font-size:10px}.nav-num{width:20px;height:20px}.nav-item.active{background:rgba(255,255,255,.86);box-shadow:0 3px 10px rgba(43,102,151,.12)}.workspace{gap:8px}.topbar{height:53px;padding:0 14px;border-radius:17px}.top-title{font-size:13px}.eyebrow{font-size:8px}.key-hint{display:none}.stage{min-height:72vh;border-radius:22px}.slide{padding:23px 18px}.cols2,.cols3,.metric-row,.timeline{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}.demo-head{align-items:flex-start;flex-direction:column;gap:8px}.gallery{height:auto;min-height:0;grid-template-columns:1fr}.gallery-main{height:34vh;min-height:220px}.gallery-side{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-height:145px}.thumb{min-height:42px}.thumb img{width:42px;height:28px}.gallery-caption{max-width:55%}.footer{height:51px;padding:0 10px;gap:8px;border-radius:16px}.footer-label{font-size:9px}.footer-btn{padding:0 9px;font-size:10px}.footer-actions{gap:5px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Liquid Glass refinement: directional light, luminous edges, restrained refraction */
+.glass{
+  --mx:18%;--my:0%;
+  background:linear-gradient(135deg,rgba(255,255,255,.018),rgba(218,240,255,.006) 48%,rgba(255,255,255,.025));
+  border-color:rgba(255,255,255,.48);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.72),inset 1px 0 0 rgba(255,255,255,.18),inset 0 -1px 0 rgba(174,222,252,.12),0 24px 70px rgba(31,69,106,.065);
+  backdrop-filter:blur(8px) saturate(185%) contrast(103%);
+  -webkit-backdrop-filter:blur(8px) saturate(185%) contrast(103%);
+}
+.glass:before{
+  background:
+    radial-gradient(ellipse at var(--mx) var(--my),rgba(255,255,255,.27),transparent 32%),
+    radial-gradient(ellipse at 8% 0%,rgba(255,255,255,.12),transparent 36%),
+    radial-gradient(ellipse at 100% 15%,rgba(141,218,255,.055),transparent 38%),
+    linear-gradient(155deg,rgba(255,255,255,.025),transparent 34%,rgba(113,190,239,.012) 72%,rgba(255,255,255,.025));
+  transition:background .12s linear;
+}
+.glass:after{
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.10),inset 0 1px 0 rgba(255,255,255,.26),inset 0 12px 28px rgba(255,255,255,.025);
+}
+.sidebar{background-color:rgba(231,245,255,.025)}
+.stage{background-color:rgba(231,245,255,.045)}
+.topbar{background-color:rgba(231,245,255,.025)}
+.card{
+  background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(235,247,255,.008));
+  border-color:rgba(255,255,255,.44);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.58),inset 0 -1px 0 rgba(178,220,248,.07),0 10px 28px rgba(43,80,117,.025);
+  backdrop-filter:blur(5px) saturate(180%);
+  -webkit-backdrop-filter:blur(5px) saturate(180%);
+}
+.liquid-active{
+  filter:url(#liquidDistortion);
+  background:linear-gradient(120deg,rgba(255,255,255,.31),rgba(204,237,255,.045) 48%,rgba(255,255,255,.22));
+  border-color:rgba(255,255,255,.62);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.8),inset 0 -1px 0 rgba(111,190,236,.12),0 8px 24px rgba(60,130,187,.06),0 0 18px rgba(147,219,255,.08);
+}
+.liquid-active:after{opacity:.82;filter:blur(.15px)}
+@media (prefers-reduced-motion:reduce){
+  .liquid-active,.glass:before,.card{transition:none!important}
+}
+@media (max-width:800px){
+  .app{gap:10px;padding:10px;grid-template-columns:210px minmax(0,1fr)}
+  .glass{backdrop-filter:blur(6px) saturate(175%);-webkit-backdrop-filter:blur(6px) saturate(175%)}
+}
+
 </style>
 </head>
 <body>
+<svg aria-hidden="true" width="0" height="0" style="position:absolute;overflow:hidden" focusable="false">
+  <filter id="liquidDistortion" x="-8%" y="-8%" width="116%" height="116%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.018 0.035" numOctaves="2" seed="11" result="noise"/>
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.2" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
 <div class="app">
   <aside class="sidebar glass" aria-label="Điều hướng pitch deck">
     <div class="brand"><img src="./logovsf.jpg" alt="Logo VSF"><div><div class="brand-name">EduMind</div><div class="brand-sub">Lifelong Learner Profile</div></div></div>
@@ -286,6 +338,22 @@ h1{font-size:clamp(30px,3.25vw,51px);letter-spacing:-.055em;line-height:1.08;mar
  let touchStartX=0;
  galleryImage.addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].screenX},{passive:true});
  galleryImage.addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-touchStartX;if(Math.abs(dx)>45)showImage(imageIndex+(dx<0?1:-1))},{passive:true});
+
+ // Directional specular highlight follows the pointer, like a curved glass surface.
+ const glassSurfaces=[...document.querySelectorAll('.glass')];
+ glassSurfaces.forEach(surface=>{
+   surface.addEventListener('pointermove',e=>{
+     if(e.pointerType==='touch')return;
+     const r=surface.getBoundingClientRect();
+     surface.style.setProperty('--mx',((e.clientX-r.left)/r.width*100).toFixed(1)+'%');
+     surface.style.setProperty('--my',((e.clientY-r.top)/r.height*100).toFixed(1)+'%');
+   },{passive:true});
+   surface.addEventListener('pointerleave',()=>{
+     surface.style.setProperty('--mx','18%');
+     surface.style.setProperty('--my','0%');
+   },{passive:true});
+ });
+
  showSlide(0);showImage(0);
 })();
 </script>
