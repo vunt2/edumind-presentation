@@ -30,8 +30,7 @@ button { font: inherit; color: inherit; border: none; background: transparent; }
   height: 100%;
   display: grid;
   grid-template-columns: 264px minmax(0, 1fr);
-  grid-template-rows: 1fr auto;
-  gap: 12px 18px;
+  gap: 18px;
   padding: 18px;
   max-width: 1800px;
   margin: auto;
@@ -57,22 +56,13 @@ button { font: inherit; color: inherit; border: none; background: transparent; }
   -webkit-backdrop-filter: blur(28px) saturate(125%) brightness(108%);
 }
 
-/* ── Sidebar Column & Cards ── */
-.sidebar-col {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  height: 100%;
-  min-height: 0;
-  position: relative;
-  z-index: 2;
-}
+/* ── Sidebar ── */
 .sidebar {
   border-radius: 28px;
-  padding: 18px 14px;
+  padding: 20px 14px;
   display: flex;
   flex-direction: column;
-  flex: 1;
+  height: 100%;
   min-height: 0;
   position: relative;
   z-index: 2;
@@ -80,167 +70,6 @@ button { font: inherit; color: inherit; border: none; background: transparent; }
 }
 .sidebar > * { position: relative; z-index: 2; }
 
-/* ── Music Player Card (Synchronized with Liquid Glass System) ── */
-.music-card {
-  grid-column: 1;
-  grid-row: 2;
-  border-radius: 28px;
-  padding: 14px 16px 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-  flex-shrink: 0;
-  background: rgba(255, 255, 255, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  box-shadow: inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.85), 0 4px 16px rgba(24, 50, 77, 0.03);
-  backdrop-filter: blur(28px) saturate(125%) brightness(108%);
-  -webkit-backdrop-filter: blur(28px) saturate(125%) brightness(108%);
-  transition: transform 0.25s var(--ease), background 0.25s, box-shadow 0.25s;
-}
-.music-card:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.42);
-  box-shadow: inset 0 2px 1.5px 0 #fff, 0 8px 24px rgba(24, 50, 77, 0.05);
-}
-.music-progress-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  user-select: none;
-}
-.music-time {
-  font-size: 11.5px;
-  font-weight: 750;
-  color: #111827;
-  letter-spacing: 0.02em;
-  font-variant-numeric: tabular-nums;
-  min-width: 26px;
-}
-.music-progress-wrap {
-  position: relative;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  height: 20px;
-  cursor: pointer;
-}
-.music-progress-track {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 4px;
-  border-radius: 99px;
-  background: rgba(70, 111, 150, 0.18);
-  overflow: hidden;
-  pointer-events: none;
-}
-.music-progress-fill {
-  width: 0%;
-  height: 100%;
-  background: #d32027;
-  border-radius: 99px;
-  box-shadow: 0 0 8px rgba(211, 32, 39, 0.4);
-}
-.music-progress-slider {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  -webkit-appearance: none;
-  appearance: none;
-  background: transparent;
-  outline: none;
-  margin: 0;
-  cursor: pointer;
-}
-.music-progress-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #ffffff;
-  border: 2px solid #d32027;
-  box-shadow: 0 2px 6px rgba(24, 50, 77, 0.22);
-  cursor: pointer;
-  transition: transform 0.15s ease;
-}
-.music-progress-slider::-webkit-slider-thumb:hover {
-  transform: scale(1.2);
-}
-.music-progress-slider::-moz-range-thumb {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #ffffff;
-  border: 2px solid #d32027;
-  box-shadow: 0 2px 6px rgba(24, 50, 77, 0.22);
-  cursor: pointer;
-}
-.music-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 22px;
-  margin-top: 8px;
-}
-.music-btn {
-  background: transparent;
-  border: none;
-  color: #1e293b;
-  cursor: pointer;
-  padding: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.18s var(--ease), color 0.18s var(--ease);
-  outline: none;
-  -webkit-tap-highlight-color: transparent;
-}
-.music-btn:hover {
-  color: #d32027;
-  transform: scale(1.15);
-}
-.music-btn:active {
-  transform: scale(0.92);
-}
-.music-btn svg {
-  width: 16px;
-  height: 16px;
-  display: block;
-}
-.music-play-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.75);
-  border: 1.5px solid rgba(255, 255, 255, 0.95);
-  box-shadow: inset 0 1.5px 1px #fff, 0 4px 12px rgba(24, 50, 77, 0.08);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #111827;
-  padding: 0;
-}
-.music-play-btn:hover {
-  background: #ffffff;
-  color: #d32027;
-  box-shadow: inset 0 1.5px 1px #fff, 0 6px 18px rgba(211, 32, 39, 0.2);
-  transform: scale(1.06);
-}
-.music-play-btn:active {
-  transform: scale(0.94);
-}
-.music-play-btn svg {
-  width: 17px;
-  height: 17px;
-  margin-left: 2px;
-}
-.music-play-btn.playing svg {
-  margin-left: 0;
-}
 .brand {
   display: flex;
   align-items: center;
@@ -281,18 +110,21 @@ button { font: inherit; color: inherit; border: none; background: transparent; }
 }
 .nav {
   position: relative;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  justify-content: space-between;
+  gap: 6px;
   isolation: isolate;
-  margin-top: 14px;
+  margin-top: 16px;
+  min-height: 0;
 }
 .liquid-active {
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
-  height: 44px;
+  height: 46px;
   border-radius: 15px;
   background: linear-gradient(120deg, rgba(255, 255, 255, 0.78), rgba(215, 240, 255, 0.52));
   border: 1px solid rgba(255, 255, 255, 0.92);
@@ -307,7 +139,7 @@ button { font: inherit; color: inherit; border: none; background: transparent; }
   content: "";
   position: absolute;
   right: 8px;
-  top: 10px;
+  top: 11px;
   width: 4px;
   height: 24px;
   border-radius: 6px;
@@ -315,7 +147,7 @@ button { font: inherit; color: inherit; border: none; background: transparent; }
   box-shadow: 0 0 10px rgba(211, 32, 39, 0.6);
 }
 .nav-item {
-  height: 44px;
+  height: 46px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -365,8 +197,6 @@ button { font: inherit; color: inherit; border: none; background: transparent; }
 
 /* ── Stage / Workspace ── */
 .stage {
-  grid-column: 2;
-  grid-row: 1 / span 2;
   border-radius: 28px;
   overflow: hidden;
   position: relative;
@@ -1767,7 +1597,7 @@ h1 {
 
 /* ── Responsive ── */
 @media(max-width: 1050px) {
-  .app { grid-template-columns: 220px minmax(0, 1fr); grid-template-rows: 1fr auto; gap: 10px 12px; padding: 12px; }
+  .app { grid-template-columns: 220px minmax(0, 1fr); gap: 12px; padding: 12px; }
   .sidebar { padding: 16px 10px; }
   .gallery { grid-template-columns: minmax(0, 1fr) 160px; }
   .cols3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1779,12 +1609,11 @@ h1 {
   body { overflow: auto; }
   .app { height: auto; min-height: 100%; display: flex; flex-direction: column; padding: 9px; gap: 10px; }
   .sidebar { padding: 12px; border-radius: 20px; flex: initial; overflow: visible; }
-  .music-card { border-radius: 18px; padding: 10px 14px 12px; }
   .brand { padding: 2px 5px 10px; border: 0; }
   .brand img { width: 36px; height: 36px; }
   .brand-name { font-size: 15px; }
   .nav-label { display: none; }
-  .nav { flex-direction: row; overflow-x: auto; padding: 6px 1px 3px; gap: 5px; }
+  .nav { flex-direction: row; overflow-x: auto; padding: 6px 1px 3px; gap: 5px; justify-content: flex-start; flex: initial; }
   .liquid-active { display: none; }
   .nav-item { height: 38px; min-width: 44px; padding: 0 10px; background: rgba(255, 255, 255, 0.5); }
   .stage { min-height: 75vh; border-radius: 22px; }
@@ -1831,31 +1660,6 @@ h1 {
         <button class="nav-item" data-slide="9"><span class="nav-num">10</span><span class="nav-title">Lời cảm ơn</span></button>
       </nav>
     </aside>
-    <div class="music-card glass" id="musicCard" aria-label="Trình phát nhạc nền">
-      <div class="music-progress-row">
-        <span class="music-time" id="musicCurTime">0:00</span>
-        <div class="music-progress-wrap" id="musicProgressWrap">
-          <div class="music-progress-track">
-            <div class="music-progress-fill" id="musicProgressFill"></div>
-          </div>
-          <input type="range" class="music-progress-slider" id="musicProgress" min="0" max="100" value="0" step="0.1" aria-label="Tua nhạc">
-        </div>
-        <span class="music-time" id="musicTotalTime">0:00</span>
-      </div>
-      <div class="music-controls">
-        <button class="music-btn" id="musicPrev" title="Bài trước" aria-label="Previous track">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 18V6l-8.5 6 8.5 6zm10 0V6l-8.5 6 8.5 6z"/></svg>
-        </button>
-        <button class="music-btn music-play-btn" id="musicPlay" title="Phát / Tạm dừng" aria-label="Play or pause">
-          <svg id="musicPlayIcon" viewBox="0 0 24 24" fill="currentColor"><polygon points="8,5 19,12 8,19"/></svg>
-          <svg id="musicPauseIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><rect x="6" y="4" width="3.8" height="16" rx="1.5"/><rect x="14.2" y="4" width="3.8" height="16" rx="1.5"/></svg>
-        </button>
-        <button class="music-btn" id="musicNext" title="Bài tiếp theo" aria-label="Next track">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 6v12l8.5-6L4 6zm10 0v12l8.5-6L14 6z"/></svg>
-        </button>
-      </div>
-      <audio id="bgAudio" preload="auto"></audio>
-  </div>
 <main class="stage" aria-live="polite">
       <section class="slide active" id="slide-0" aria-label="Slide 1: Tổng quan">
         <div class="intro-panel glass-panel">
@@ -2204,188 +2008,9 @@ h1 {
    if (Math.abs(dx) > 45) showImage(imageIndex + (dx < 0 ? 1 : -1));
  }, { passive: true });
 
- 
-  // ── Background Music Player ──
-  const musicPlaylist = [
-    'Alan Walker - Faded (Instrumental Version).mp3',
-    'CKay - Love Nwantiti [Instrumental].mp3',
-    'Detective Conan Movie 23 Theme-Music (The Fist Of Blue Sapphire).mp3',
-    'INSTRUMENTAL Choi Yu Ree - Wish (Hometown Cha Cha Cha OST) - Lyrics.mp3',
-    'Intro (Mong Em Hạnh Phúc Suốt Cuộc Đời Này) (Instrumental) - buitruonglinh (prod. Đậu Tất Đạt).mp3',
-    "Merry-Go-Round of Life - Howl's Moving Castle [Piano] - Joe Hisaishi.mp3",
-    'Only - LeeHi l Yuriko Piano Cover.mp3',
-    '[Karaoke] Giấc Mơ Rất Thơ - Mer ft. Thaison!.mp3'
-  ];
-
-  const bgAudio = document.getElementById('bgAudio');
-  const musicCurTime = document.getElementById('musicCurTime');
-  const musicTotalTime = document.getElementById('musicTotalTime');
-  const musicProgress = document.getElementById('musicProgress');
-  const musicProgressFill = document.getElementById('musicProgressFill');
-  const musicPrev = document.getElementById('musicPrev');
-  const musicPlay = document.getElementById('musicPlay');
-  const musicNext = document.getElementById('musicNext');
-  const musicPlayIcon = document.getElementById('musicPlayIcon');
-  const musicPauseIcon = document.getElementById('musicPauseIcon');
-
-  let currentTrackIdx = Math.floor(Math.random() * musicPlaylist.length);
-  let isSeeking = false;
-
-  function formatTime(secs) {
-    if (isNaN(secs) || !isFinite(secs) || secs < 0) return '0:00';
-    const m = Math.floor(secs / 60);
-    const s = Math.floor(secs % 60);
-    return m + ':' + (s < 10 ? '0' : '') + s;
-  }
-
-  function setPlayState(playing) {
-    if (playing) {
-      if (musicPlayIcon) musicPlayIcon.style.display = 'none';
-      if (musicPauseIcon) musicPauseIcon.style.display = 'block';
-      if (musicPlay) musicPlay.classList.add('playing');
-    } else {
-      if (musicPlayIcon) musicPlayIcon.style.display = 'block';
-      if (musicPauseIcon) musicPauseIcon.style.display = 'none';
-      if (musicPlay) musicPlay.classList.remove('playing');
-    }
-  }
-
-  function playTrack(index) {
-    if (!musicPlaylist.length || !bgAudio) return;
-    currentTrackIdx = (index + musicPlaylist.length) % musicPlaylist.length;
-    bgAudio.src = encodeURI('./audio/' + musicPlaylist[currentTrackIdx]);
-    bgAudio.load();
-    if (musicProgress) musicProgress.value = 0;
-    if (musicProgressFill) musicProgressFill.style.width = '0%';
-    if (musicCurTime) musicCurTime.textContent = '0:00';
-    if (musicTotalTime) musicTotalTime.textContent = '0:00';
-
-    const p = bgAudio.play();
-    if (p !== undefined) {
-      p.then(() => {
-        setPlayState(true);
-      }).catch(() => {
-        setPlayState(false);
-        const unlockAudio = () => {
-          if (bgAudio.paused) {
-            bgAudio.play().then(() => setPlayState(true)).catch(() => {});
-          }
-          window.removeEventListener('pointerdown', unlockAudio);
-          window.removeEventListener('keydown', unlockAudio);
-        };
-        window.addEventListener('pointerdown', unlockAudio, { once: true });
-        window.addEventListener('keydown', unlockAudio, { once: true });
-      });
-    }
-  }
-
-  function nextTrack(random = true) {
-    let nextIdx;
-    if (random && musicPlaylist.length > 1) {
-      do {
-        nextIdx = Math.floor(Math.random() * musicPlaylist.length);
-      } while (nextIdx === currentTrackIdx);
-    } else {
-      nextIdx = (currentTrackIdx + 1) % musicPlaylist.length;
-    }
-    playTrack(nextIdx);
-  }
-
-  function prevTrack() {
-    if (bgAudio && bgAudio.currentTime > 3) {
-      bgAudio.currentTime = 0;
-    } else {
-      let prevIdx = (currentTrackIdx - 1 + musicPlaylist.length) % musicPlaylist.length;
-      playTrack(prevIdx);
-    }
-  }
-
-  if (bgAudio) {
-    bgAudio.addEventListener('timeupdate', () => {
-      if (!isSeeking && bgAudio.duration) {
-        const cur = bgAudio.currentTime;
-        const dur = bgAudio.duration;
-        const pct = (dur > 0) ? (cur / dur) * 100 : 0;
-        if (musicProgress) musicProgress.value = pct;
-        if (musicProgressFill) musicProgressFill.style.width = pct + '%';
-        if (musicCurTime) musicCurTime.textContent = formatTime(cur);
-      }
-    });
-
-    bgAudio.addEventListener('loadedmetadata', () => {
-      if (musicTotalTime && bgAudio.duration) {
-        musicTotalTime.textContent = formatTime(bgAudio.duration);
-      }
-    });
-
-    bgAudio.addEventListener('durationchange', () => {
-      if (musicTotalTime && bgAudio.duration) {
-        musicTotalTime.textContent = formatTime(bgAudio.duration);
-      }
-    });
-
-    bgAudio.addEventListener('ended', () => {
-      nextTrack(true);
-    });
-
-    bgAudio.addEventListener('error', (e) => {
-      console.warn('Audio playback error, advancing to next track:', e);
-      setTimeout(() => nextTrack(true), 1200);
-    });
-  }
-
-  if (musicProgress) {
-    musicProgress.addEventListener('input', (e) => {
-      isSeeking = true;
-      const pct = parseFloat(e.target.value);
-      if (musicProgressFill) musicProgressFill.style.width = pct + '%';
-      if (bgAudio && bgAudio.duration) {
-        const cur = (pct / 100) * bgAudio.duration;
-        if (musicCurTime) musicCurTime.textContent = formatTime(cur);
-      }
-    });
-
-    musicProgress.addEventListener('change', (e) => {
-      const pct = parseFloat(e.target.value);
-      if (bgAudio && bgAudio.duration) {
-        bgAudio.currentTime = (pct / 100) * bgAudio.duration;
-      }
-      isSeeking = false;
-    });
-  }
-
-  if (musicPlay) {
-    musicPlay.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (!bgAudio) return;
-      if (bgAudio.paused) {
-        bgAudio.play().then(() => setPlayState(true)).catch(console.error);
-      } else {
-        bgAudio.pause();
-        setPlayState(false);
-      }
-    });
-  }
-
-  if (musicNext) {
-    musicNext.addEventListener('click', (e) => {
-      e.stopPropagation();
-      nextTrack(true);
-    });
-  }
-
-  if (musicPrev) {
-    musicPrev.addEventListener('click', (e) => {
-      e.stopPropagation();
-      prevTrack();
-    });
-  }
-
-  // Auto-play random background track on page load
-  playTrack(currentTrackIdx);
-
   showSlide(0, true);
- showImage(0);
+  showImage(0);
+  requestAnimationFrame(moveIndicator);
 })();
 </script>
 
@@ -2418,9 +2043,7 @@ import { LiquidGlass } from './liquidglass.js';
     };
 
     if (sb) sb.dataset.config = JSON.stringify(playgroundConfig);
-    const musicCard = document.getElementById('musicCard');
-    if (musicCard) musicCard.dataset.config = JSON.stringify(playgroundConfig);
-    const elements = [sb, musicCard].filter(Boolean);
+    const elements = [sb];
     const instance = await LiquidGlass.init({
       root: document.getElementById('appRoot'),
       glassElements: elements,
